@@ -6,7 +6,7 @@ node_modules
 .vscode/
 
 ## Bower
-src/components
+bower_components/
 
 ## Sass
 .sass-cache
