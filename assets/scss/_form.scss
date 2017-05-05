@@ -1,0 +1,40 @@
+.form {
+  padding-bottom: 2rem;
+
+  &__gr {
+    position: relative;
+
+    label {
+      display: inline-block;
+      background: $bgcolor_light;
+      transform: translateY(45%);
+      padding-bottom: 0.5rem;
+      padding-right: 5rem;
+    }
+
+    input {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__inp {
+    display: inline-block;
+    width: 100%;
+    border: .2rem solid #000000;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 100;
+    padding: 1.5rem 1.5rem;
+    border-radius: .3rem;
+  }
+
+  &__tarea {
+    @extend .form__inp;
+    height: 22rem;
+  }
+
+  &__btn {
+    display: block;
+    margin: 3rem auto 1rem;
+  }
+}

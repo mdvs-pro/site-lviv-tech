@@ -1,0 +1,8 @@
+.request {
+  background: $bgcolor_light;
+
+  &__content {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+}

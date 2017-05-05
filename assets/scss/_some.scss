@@ -5,12 +5,17 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 
+html ::selection {
+    color: #050505;
+    background: #00ff7c
+}
+
 body {
-	background: #f7f7f7;
-	@include font-size(14.8px);
+	background: $bgcolor_light;
+	@include font-size(16px);
 	font-family: $primary_font;
 	font-weight: 300;
-	line-height: 2.4rem;
+	line-height: 1.3;
 	color: $primary_color;
 }
 
@@ -34,9 +39,10 @@ h2, .h2 {
 h3, .h3 {
 	font-family: $secondary_font;
 	font-weight: 400;
-	font-size: 2.2rem;
-	line-height: 2.6rem;
+	font-size: 2.8rem;
+	line-height: 1.2;
 	color: $primary_color;
+	padding-bottom: 2rem;
 }
 
 h4, .h4 {
@@ -45,6 +51,14 @@ h4, .h4 {
 	line-height: 2rem;
 	color: $primary_color;
 	text-transform: uppercase;
+}
+
+input[type=email], 
+input[type=password], 
+input[type=submit], 
+input[type=text], 
+textarea {
+    appearance: none;
 }
 
 p {
@@ -58,6 +72,17 @@ a {
 
 strong, b, .strong {
 	font-weight: 500;
+}
+
+textarea {
+	resize: none;
+}
+
+ul {
+	li {
+		position: relative;
+		padding-left: 2.4rem;
+	}
 }
 
 .img--responsive {
@@ -81,147 +106,20 @@ strong, b, .strong {
 	}
 }
 
-ul {
-	li {
-		position: relative;
-		padding-left: 2.4rem;
-	}
-}
-
 .text-center {
 	text-align: center;
 }
 
 .link {
 	text-decoration: none;
-
-	&--arrow {
-
-		&:hover .arrow {
-			transform: scaleX(1.4);
-		}
-	}
-
-	&--more {
-		font-weight: 600;
-		color: $dark_color;
-	}
 }
 
-.socials {
+.sc {
 
-	&__item {
-		color: $color_social;
-		margin: 0 0.8rem;
+	&__header {
+		font-size: 1.8rem;
+		font-weight: 100;
+		text-align: center;
+		margin-bottom: 3rem;
 	}
-
-	&__item .kf-icon {
-		@include animation(color,transform);
-		transform: translateZ(0);
-	}
-
-	&__item:hover .kf-icon {
-		transform: scale(1.3) translateZ(0);
-	}
-
-	@each $key, $clr in $socials {
-		&__item--#{$key}:hover {
-			color: $clr;
-		}
-	}
-
-}
-
-.heading {
-	display: block;
-	position: relative;
-	font-size: 1.7rem;
-	font-weight: 600;
-	padding-top: 1rem;
-	color: #313131;
-
-	&:before {
-		content: '';
-		display: inline-block;
-		position: absolute;
-		top: 0;
-		width: 2.5rem;
-		background: $secondary_color;
-		height: 0.3rem;
-	}
-
-	&--left {
-		float: left;
-		width: 13rem;
-		padding-right: 1.584rem;
-		font-size: 1.584rem;
-		font-weight: 500;
-	}
-
-	&--left + div {
-		overflow: hidden;
-	}
-
-	&--top {
-		margin-bottom: 1.538rem;
-		font-size: 1.584rem;
-		font-weight: 500;
-	}
-
-	.widget-area &--top {
-		margin-bottom: 0;
-	}
-}
-
-.column {
-
-	&--border-r {
-		border-right: 0.1rem solid $color_gray;
-	}
-
-	&--border-t {
-		border-top: 0.1rem solid $color_gray;
-	}
-
-	&--border-b {
-		border-bottom: 0.1rem solid $color_gray;
-	}
-
-	&--top {
-
-		.post {
-			padding-top: 0;
-		}
-	}
-}
-
-.logo {
-	@extend %ibm;
-	width: 32.4rem;
-}
-
-blockquote {
-
-	&:before {
-		font: 5rem/1 FontAwesome;
-		content: "\f10d";
-		display: block;
-		text-decoration: inherit;
-		color: $secondary_color;
-	}
-}
-
-.container {
-
-	&--full-h {
-		height: 100%;
-
-		.row {
-			height: 100%;
-		}
-	}
-}
-
-.col--full-h {
-	height: 100%;
 }

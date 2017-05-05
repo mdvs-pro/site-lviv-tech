@@ -1,7 +1,9 @@
 .footer {
   background: $bgcolor_light;
+  padding: 8rem 0;
 
   &__copyright {
+    font-weight: 700;
     text-align: center;
   }
 }
