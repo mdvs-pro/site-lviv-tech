@@ -1,0 +1,25 @@
+@include media-breakpoint-down(xs) {
+}
+
+@include media-breakpoint-down(sm) {
+}
+
+@include media-breakpoint-down(md) {
+
+  .header {
+    &__nav {
+      display: none;
+    }
+
+    &__burger {
+      display: inline-block;
+    }
+  }
+
+}
+
+@include media-breakpoint-down(lg) {
+}
+
+@include media-breakpoint-down(xl) {
+}

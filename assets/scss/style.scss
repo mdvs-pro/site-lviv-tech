@@ -1,0 +1,53 @@
+/*!
+ * -------------------------------------
+Theme Name: kfund_media
+Theme URI: kfund-media.com
+Author: kfund-media
+Author URI: kfund-media.com
+Description: Stylish news platform
+Version: 0.0.7
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: kfund_media
+Tags:
+ * -------------------------------------
+ */
+
+
+// Base Style
+@import "base/_mixin";
+@import "base/_fonts";
+@import "base/_variables";
+@import "base/_extend";
+@import "base/_function";
+@import "base/_sprite";
+@import "base/_reset";
+@import "base/_bootstrap-grid"; // bootstrap v4 grid
+
+
+//	Style
+@import "_some";			// general styles
+@import "_btnsIcons";
+@import "_header";
+@import "_footer";
+@import "_sidebar";		    // sidebar and sidebar widgets
+@import "_excerpt";
+@import "_post";
+@import "_libs";            // libraries and plugins
+@import "_entry";
+
+@import "partials/top-panel";
+@import "partials/_mobile-nav";
+
+@import "partials/_frontpage";
+
+@import "_single";
+@import "_archive";
+@import "_page";
+
+@import "_adaptive";
+
+
+
+
+

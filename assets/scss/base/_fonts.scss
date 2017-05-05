@@ -1,0 +1,78 @@
+@include font-face('NewBaskervilleC', 'NewBaskervilleC', 'assets/fonts/NewBaskervilleC/NewBaskervilleC', 400, normal);
+@include font-face('NewBaskervilleC', 'NewBaskervilleC-Bold', 'assets/fonts/NewBaskervilleC/NewBaskervilleC-Bold', 600, normal);
+
+@include font-face('kfund-font', 'kfund', 'assets/fonts/kfund/kfund-font-icon', 400, normal);
+
+/*
+kFund-icon
+powered by http://app.fontastic.me/
+*/
+
+.kf-icon {
+    display: inline-block;
+    vertical-align: text-bottom;
+    font: normal normal normal 14px/1 "kfund-font";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+}
+
+.kf-icon-left-open-big:before {
+  content: "\61";
+}
+.kf-icon-right-open-big:before {
+  content: "\62";
+}
+.kf-icon-arrow-right:before {
+  content: "\63";
+}
+.kf-icon-facebook:before {
+  content: "\64";
+}
+.kf-icon-twitter:before {
+  content: "\65";
+}
+.kf-icon-youtube:before {
+  content: "\66";
+}
+.kf-icon-instagram:before {
+  content: "\67";
+}
+.kf-icon-vk:before {
+  content: "\68";
+}
+.kf-icon-gplus:before {
+  content: "\69";
+}
+.kf-icon-rss:before {
+  content: "\6a";
+}
+.kf-icon-usd:before {
+  content: "\6b";
+}
+.kf-icon-eur:before {
+  content: "\6c";
+}
+.kf-icon-search:before {
+  content: "\6d";
+}
+.kf-icon-quotes:before {
+  content: "\6e";
+}
+.kf-icon-close:before {
+  content: "\6f";
+}
+.kf-icon-tags:before {
+  content: "\70";
+}
+.kf-icon-arrow-left-c:before {
+  content: "\71";
+}
+.r180 {
+  transform: rotate(180deg);
+} 
+.r270 {
+  transform: rotate(270deg);
+} 

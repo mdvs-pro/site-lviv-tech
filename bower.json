@@ -1,0 +1,32 @@
+{
+  "name": "site-lviv",
+  "description": "corporative site with parallax animation, page loaders, wow effects",
+  "main": "index.html",
+  "authors": [
+    "yuchi.mdvs"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "site",
+    "mdvs",
+    "yuchi.mdvs",
+    "jquery",
+    "parallax",
+    "scss",
+    "html",
+    "css",
+    "svg",
+    "animation"
+  ],
+  "homepage": "https://github.com/yuchiko/site-lviv",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

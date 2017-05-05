@@ -1,0 +1,92 @@
+.holidays {
+  background-image: url(assets/images/easter/easter-bg-min.jpg);
+  background-size: cover;
+  height: 410px;
+}
+
+.parallax {
+
+  &__mobile:after {
+    @include media-breakpoint-down(sm) {
+      content: "";
+      opacity: 0.35;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 1;   
+      background-image: url(assets/images/easter/easter-el-2.png);
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      background-size: auto 80%;
+    }
+  }
+
+  &__post {
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__col {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &__viewport { 
+    position:relative; 
+    overflow:hidden; 
+  }
+
+  &__scene {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__layer {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+ }
+
+ .layer {
+  display: none!important;
+
+  &--xs {
+    @include media-breakpoint-up(xs) {
+      display: block!important;
+    }
+  }
+
+  &--sm {
+    @include media-breakpoint-up(sm) {
+      display: block!important;
+    }
+  }
+
+  &--md {
+    @include media-breakpoint-up(md) {
+      display: block!important;
+    }
+  }
+
+  &--lg {
+    @include media-breakpoint-up(lg) {
+      display: block!important;
+    }
+  }
+
+  &--xl {
+    @include media-breakpoint-up(xl) {
+      display: block!important;
+    }
+  }
+
+
+
+ }
+
+} 
