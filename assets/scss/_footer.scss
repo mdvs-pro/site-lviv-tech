@@ -1,60 +1,7 @@
 .footer {
-  margin-top: 3.5rem;
-
-  .single & {
-    margin-top: 0;
-  }
-
-  p {
-    margin-bottom: 0;
-  }
-
-  &-top {
-    @extend %bg-gradient-gray;
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-
-    &__div {
-      align-self: center;
-      margin-right: 6rem;
-    }
-  }
-
-  &__socials {
-
-    .kf-icon {
-      vertical-align: bottom;
-    }
-  }
-
-  &-bottom {
-    background: $secondary_color;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-
-    p, a {
-      color: $color_white;
-    }
-
-    .footer-menu__row {
-      justify-content: space-around;
-    }
-
-    .footer-menu {
-      text-transform: uppercase;
-
-      &__heading {
-        font-weight: 500;
-        padding-bottom: 2.5rem;
-      }
-
-      &__link {
-        display: block;
-      }
-    }
-  }
+  background: $bgcolor_light;
 
   &__copyright {
-    padding-top: 2.5rem;
+    text-align: center;
   }
 }
