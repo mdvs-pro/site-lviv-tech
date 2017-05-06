@@ -32,7 +32,7 @@ gulp.task('compress', function (cb) {
 
 
 gulp.task('bower', function () {
-  gulp.src('./src/partials/inc-bottom.html')
+  gulp.src('./src/partials/inc-*.html')
     .pipe(wiredep({
       directory: "./bower_components/"
     }))

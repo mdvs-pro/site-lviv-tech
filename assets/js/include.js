@@ -4,6 +4,7 @@
 	$(function () {
 		// on ready
 		scrollNav();
+		madValidation.init();
 	});
 
 	$(window).on('load', function () {
@@ -50,6 +51,24 @@
 			}, 1500, 'easeInOutExpo');
 			event.preventDefault();
 		});
+	}
+
+	var madValidation = {
+		option: {
+			formClass: '.md-form'
+		},
+		init: function() {
+			var _self = this;
+			var forms = document.querySelectorAll(_self.option.formClass);
+			
+			for (var i = 0; i < forms.length; i++) {
+					forms[i].addEventListener('submit', _self.initActions);
+			}
+		},
+		initActions: function(){
+			event.preventDefault();
+			swal("Спасибо!", "Ваша заявка успешно отправлена - мы свяжемся с вами в ближайшее время!", "success");
+		}
 	}
 
 }(window.jQuery, window, document));

@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
@@ -64,7 +67,7 @@
             <h2 class="sc__heading h3">Подати заявку</h2>
             <p>Для того, щоб відправити заявку, будь ласка, заповніть форму. Наші колеги обов’язково зв’яжуться з Вами в найближчий час.</p>
           </header>
-          <form class="form request__form" action="" method="POST">
+          <form class="form request__form md-form" action="" method="POST">
             <div class="form__gr">
               <label for="user_name">Повне ім'я</label>
               <input class="form__inp" type="text" name="user_name" id="user_name">
@@ -97,6 +100,7 @@
 
 <!-- bower:js -->
 <script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
 <!-- endbower -->
 <script src="assets/js/include.js"></script>
 </body>
