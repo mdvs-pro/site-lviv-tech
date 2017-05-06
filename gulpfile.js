@@ -5,17 +5,31 @@ var gulp = require('gulp'),
 		rename = require('gulp-rename'),
 		sourcemaps = require('gulp-sourcemaps'),
 		rigger = require('gulp-rigger'),
-		wiredep = require('wiredep').stream;
+		wiredep = require('wiredep').stream,
+		useref = require('gulp-useref'),
+		gulpif = require('gulp-if'),
+		minifyCss = require('gulp-minify-css'),
+		uglifyjs = require('uglify-js'),
+		minifier = require('gulp-uglify/minifier'),
+		pump = require('pump');
 
-var uglifyjs = require('uglify-js');
-var minifier = require('gulp-uglify/minifier');
-var pump = require('pump');
+var options = {
+	preserveComments: 'license'
+};
+
+gulp.task('build', function() {
+	return gulp.src('index.html')
+		.pipe(wiredep({
+      directory: "./bower_components/"
+    }))
+		.pipe(useref())
+		.pipe(gulpif('*.js', minifier(options, uglifyjs)))
+		.pipe(gulpif('*.css', minifyCss()))
+		.pipe(gulp.dest('.'))
+});
 
 gulp.task('compress', function (cb) {
   // the same options as described above
-  var options = {
-    preserveComments: 'license'
-  };
 
   pump([
       gulp.src('./assets/js/include.js'),
@@ -28,8 +42,6 @@ gulp.task('compress', function (cb) {
     cb
   );
 });
-
-
 
 gulp.task('bower', function () {
   gulp.src('./src/partials/inc-*.html')
