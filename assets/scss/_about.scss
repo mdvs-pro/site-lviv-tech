@@ -1,0 +1,13 @@
+.about {
+  color: $color_white;
+  padding-top: 20rem;
+  margin-top: -20rem;
+  padding-bottom: 20rem;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+
+  .heading {
+    color: $color_white;
+  }
+}

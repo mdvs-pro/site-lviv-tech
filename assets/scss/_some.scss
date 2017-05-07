@@ -122,4 +122,19 @@ ul {
 		text-align: center;
 		margin-bottom: 3rem;
 	}
+
+	&--scew {
+		position: relative;
+
+		&:before {
+			background-color: #050505;
+			content: "";
+			height: 100%;
+			left: -100%;
+			position: absolute;
+			top: 0;
+			transform: rotate(-15deg);
+			width: 300%;
+		}
+	}
 }
