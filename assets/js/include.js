@@ -5,6 +5,7 @@
 		// on ready
 		scrollNav();
 		madValidation.init();
+		FETechnology.Init();
 	});
 
 	$(window).on('load', function () {
@@ -69,6 +70,43 @@
 			event.preventDefault();
 			swal("Спасибо!", "Ваша заявка успешно отправлена - мы свяжемся с вами в ближайшее время!", "success");
 		}
+	}
+
+	function aboutIcon() {
+		var className = '.js-ic-a';
+	}
+
+	var FETechnology = {
+		Init: function() {
+				this.AnimateIcons();
+		},
+		AnimateIcons: function() {
+				// if (!Modernizr.touchevents) {
+						var a = new ScrollMagic.Controller,
+								b = new TimelineMax;
+						b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
+								marginLeft: "-41.5%",
+								marginTop: "34%",
+								rotation: 360
+						}), TweenMax.to(".js-ic-a__icon--rhomb", 1, {
+								marginLeft: "-15.5%",
+								marginTop: "25%",
+								rotation: 360
+						}), TweenMax.to(".js-ic-a__icon--star", 1, {
+								marginLeft: "9%",
+								marginTop: "16%",
+								rotation: 360
+						}), TweenMax.to(".js-ic-a__icon--stop", 1, {
+								marginLeft: "34%",
+								marginTop: "7%",
+								rotation: 360
+						})]);
+						new ScrollMagic.Scene({
+								triggerElement: ".js-ic-a",
+								duration: 400
+						}).setTween(b).addTo(a)
+				// }
+		},
 	}
 
 }(window.jQuery, window, document));

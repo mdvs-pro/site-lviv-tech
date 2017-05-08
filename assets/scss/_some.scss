@@ -18,6 +18,10 @@ body {
 	color: $primary_color;
 }
 
+.body-wrapper {
+	overflow: hidden;
+}
+
 h1, .h1 {
 	font-family: $secondary_font;
 	font-weight: 600;
@@ -127,14 +131,55 @@ ul {
 		position: relative;
 
 		&:before {
-			background-color: #050505;
 			content: "";
-			height: 100%;
-			left: -100%;
+			background-color: #050505;
 			position: absolute;
-			top: 0;
-			transform: rotate(-15deg);
 			width: 300%;
+			height: 100%;
+			top: 0;
+			left: -100%;
+			transform: rotate(-15deg);
+		}
+
+		.sc__header {
+			text-align: left;
+			margin-bottom: 0;
+			line-height: 0;
+			padding: 3rem 0;
+			border-top: 1px solid $color_gray;
+		}
+
+		.heading {
+			padding-bottom: 0;
+		}
+
+		.column:nth-child(1) {
+			margin-top: 46rem;
+		}
+
+		.column:nth-child(2) {
+			margin-top: 36rem;
+		}
+
+		.column:nth-child(3) {
+			margin-top: 26rem;
+		}
+
+		.column:nth-child(4) {
+			margin-top: 16rem;
 		}
 	}
+}
+
+
+.icon-animate {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 7rem;
+	margin-left: -3.5rem;
+}
+
+.js-ic-a__icon {
+	transform: matrix(1, 0, 0, 1, 0, 0);
 }
