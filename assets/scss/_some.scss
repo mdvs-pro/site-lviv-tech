@@ -16,6 +16,30 @@ body {
 	font-weight: 300;
 	line-height: 1.3;
 	color: $primary_color;
+	position: relative;
+	&::before {
+		content: '';
+		height: 0;
+		background-color: #fff;
+	    overflow: hidden;
+	    transform: translate(-50%,-50%) rotate(-25deg);
+	    transition: height .9s cubic-bezier(.55,.085,0,.99);
+	    width: 200%;
+	    z-index: 900;
+		left: 50%;
+	    position: fixed;
+	    top: 50%;
+	}
+	&.is-pagetransition {
+		&::before {
+			height: 200%;
+		}
+	}
+	&.is-pagetransitionend {
+		&::before {
+			opacity: 0;
+		}
+	}
 }
 
 .body-wrapper {
@@ -56,10 +80,10 @@ h4, .h4 {
 	text-transform: uppercase;
 }
 
-input[type=email], 
-input[type=password], 
-input[type=submit], 
-input[type=text], 
+input[type=email],
+input[type=password],
+input[type=submit],
+input[type=text],
 textarea {
     appearance: none;
 }
