@@ -61,7 +61,7 @@
 		init: function() {
 			var _self = this;
 			var forms = document.querySelectorAll(_self.option.formClass);
-			
+
 			for (var i = 0; i < forms.length; i++) {
 					forms[i].addEventListener('submit', _self.initActions);
 			}
@@ -78,7 +78,32 @@
 
 	var FETechnology = {
 		Init: function() {
-				this.AnimateIcons();
+			this.PageLoad();
+			this.NavTransition();
+			this.AnimateIcons();
+		},
+		PageLoad: function() {
+			setTimeout(function() {
+				$("body").removeClass("is-pagetransition")
+			}, 100);
+
+			setTimeout(function() {
+				$("body").addClass("is-pagetransitionend")
+			}, 1400);
+		},
+		NavTransition: function() {
+			$(".menu__link, .header__logo").on("click", function(e) {
+				e.preventDefault();
+
+				var href = $(this).attr("href");
+
+				$("body").removeClass("is-pagetransitionend");
+				$("body").addClass("is-pagetransition");
+
+				setTimeout(function() {
+					window.location.href = href;
+				}, 600)
+			});
 		},
 		AnimateIcons: function() {
 				// if (!Modernizr.touchevents) {
