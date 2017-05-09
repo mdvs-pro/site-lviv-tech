@@ -7,38 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendor.css">
+    <!-- build:css assets/vendor.css-->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="home is-pagetransition">
 
 <header id="header" class="header">
-    <div class="container header__content">
-        <a href="/" class="header__logo logo">
-            <img src="assets/images/logo-white.svg" alt="logo">
-        </a>
-        <div class="header__nav">
-            <nav role="navigation">
-                <ul class="header__menu menu">
-                    <li><a href="/about.html" class="menu__link active">Про нас</a></li>
-                    <li><a href="/infrostructure.html" class="menu__link">Інфраструктура</a></li>
-                    <li><a href="/residents.html" class="menu__link">Резидентам</a></li>
-                    <li><a href="/contacts.html" class="menu__link">Контакти</a></li>
-                </ul>
-            </nav>
+  <div class="container-wrap">
+    <div class="container-fluid header__content">
+      <a href="/" class="header__logo logo">
+        <img src="assets/images/logo-white.svg" alt="logo">
+      </a>
+      <div class="header__nav">
+        <nav role="navigation">
+          <ul class="header__menu menu">
+            <li><a href="/about.html" class="menu__link active">Про нас</a></li>
+            <li><a href="/infrostructure.html" class="menu__link">Інфраструктура</a></li>
+            <li><a href="/residents.html" class="menu__link">Резидентам</a></li>
+            <li><a href="/contacts.html" class="menu__link">Контакти</a></li>
+          </ul>
+        </nav>
 
-            <div class="header__soc">
-                fb
-            </div>
-
-            <button class="burger header__burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="header__soc">
+          <a href="#" class="header__soc-link"><img src="assets/images/fb.png" alt=""></a>
+          <a href="#" class="header__soc-link"><img src="assets/images/yt.png" alt=""></a>
         </div>
+
+        <button class="burger header__burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
+  </div>
 </header>
 <div class="mobile-nav js_mobile-nav">
     <nav>
@@ -56,15 +63,22 @@
 
     <div id="pin-container">
       <section class="sc welcome" id="welcome">
-        <div class="container">
-      
-        </div>
-      
         <div class="image-wrapper">
           <div class="image-container" id="image-container">
             <img src="assets/images/bg_one(2550)-min.jpg" alt="" id="layer-1">
             <img src="assets/images/bluer(2550)-min.png" alt="" id="layer-2">
             <img src="assets/images/claster(2550)-min.png" alt="" id="layer-3">
+          </div>
+        </div>
+      
+        <div class="container-wrap">
+          <div class="container-fluid">
+            <div class="welcome__content">
+              <p class="welcome__sub-slogan">Спільнота</p>
+              <p class="welcome__slogan" id="welcome-slogan">LvivTech<span>.</span><span class="is-animate">Живи</span></p>
+              <p class="welcome__p">Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію</p>
+              <a href="#" class="welcome__link">Lorem Ipsum?</a>
+            </div>
           </div>
         </div>
       </section>
@@ -107,6 +121,10 @@
       </section>
     </div>
     <section class="sc video">
+      <div class="container">
+        <h2 class="sc__title">Місто у місті</h2>
+      </div>
+    
       <video autoplay="" loop="" muted="" poster="">
           <source src="" type="video/webm">
           <source src="http://campverholy.businesscamp.com.ua/wp-content/uploads/2017/02/Camp-for-web_2mb.mp4" type="video/mp4">
@@ -115,6 +133,7 @@
     </section>
     <section class="sc sc--scew residents sc--dark" id="residents">
       <div class="container">
+        <h2 class="sc__title">Резидентам</h2>
         <div class="row">
           <div class="column col-md-3">
             <div class="sc__header">
@@ -182,7 +201,15 @@
     </div>
 </footer>
 
-<script src="assets/scripts.js"></script>
+<div class="loader-overlay"></div>
+
+<!-- build:js assets/scripts.js-->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 <script src="assets/js/libs/animation.gsap.min.js"></script>

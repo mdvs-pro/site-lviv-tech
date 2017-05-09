@@ -1,6 +1,56 @@
 .welcome {
   background: #000c1a;
   height: 100rem;
+  padding-top: 22rem;
+
+  &__sub-slogan {
+    font-size: 5.5rem;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  &__slogan {
+    font-size: 6.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4rem;
+    span {
+      color: #f7901e;
+    }
+  }
+
+  &__p {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    max-width: 290px;
+    margin-bottom: 3rem;
+  }
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    max-width: 290px;
+    height: 54px;
+    border: 2px solid #f7901e;
+    border-radius: 27px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s cubic-bezier(.55,.085,0,.99);
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #f7901e;
+    }
+  }
 }
 
 .image-wrapper {
@@ -22,6 +72,22 @@
     &#layer-2,
     &#layer-3 {
       opacity: 0;
+    }
+  }
+}
+
+
+#welcome-slogan {
+  .is-animate {
+    i {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all .2s cubic-bezier(.55,.085,0,.99);
+      &.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 }

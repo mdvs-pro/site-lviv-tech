@@ -6,23 +6,6 @@
 		scrollNav();
 		madValidation.init();
 		FETechnology.Init();
-
-		var tl = new TimelineMax();
-
-		tl
-			.to('#image-container #layer-3', 1, {opacity: 1})
-			.to('#image-container #layer-2', 1, {opacity: 1});
-
-		var controller = new ScrollMagic.Controller();
-
-		var pinIntroScene = new ScrollMagic.Scene({
-			triggerElement: '#pin-container',
-			triggerHook: 0,
-			duration: 1.5 * $(window).height()
-		})
-		.setPin('#pin-container')
-		.setTween(tl)
-		.addTo(controller);
 	});
 
 	$(window).on('load', function () {
@@ -58,16 +41,14 @@
 	};
 
 	function scrollNav() {
-		//jQuery for page scrolling feature - requires jQuery Easing plugin
-		$(document).on('click touchstart', 'a.page-scroll', function (event) {
+		function toggleHeader() {
+			($(window).scrollTop() > 10) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
+		}
 
-			$('.js_mobile-nav').removeClass('open');
+		toggleHeader();
 
-			var $anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top
-			}, 1500, 'easeInOutExpo');
-			event.preventDefault();
+		$(window).on('scroll', function() {
+			toggleHeader();
 		});
 	}
 
@@ -97,15 +78,52 @@
 		Init: function() {
 			this.PageLoad();
 			this.NavTransition();
+			this.Scroll();
+			this.AnimateSlogan();
+			this.AnimateTitles();
 			this.AnimateIcons();
+		},
+		Scroll: function() {
+			var tl = new TimelineMax();
+
+			tl
+				.to('#image-container #layer-3', 1, {opacity: 1})
+				.to('#image-container #layer-2', 1, {opacity: 1});
+
+			var controller = new ScrollMagic.Controller();
+
+			var pinIntroScene = new ScrollMagic.Scene({
+				triggerElement: '#pin-container',
+				triggerHook: 0,
+				duration: 1.5 * $(window).height()
+			})
+			.setPin('#pin-container')
+			.setTween(tl)
+			.addTo(controller);
+		},
+		AnimateTitles: function() {
+			var controller = new ScrollMagic.Controller();
+			var titles = $('.sc__title');
+
+			titles.each(function() {
+				var tl = new TimelineMax();
+				tl.fromTo(this, 0.5, {x: -100, opacity: 0}, {x: 0, opacity: 1});
+
+				var scene = new ScrollMagic.Scene({
+					triggerElement: this
+				})
+				.setTween(tl)
+				.addTo(controller);
+			});
 		},
 		PageLoad: function() {
 			setTimeout(function() {
-				$("body").removeClass("is-pagetransition")
+				$("body").removeClass("is-pagetransition");
 			}, 100);
 
 			setTimeout(function() {
-				$("body").addClass("is-pagetransitionend")
+				$("body").addClass("is-pagetransitionend");
+				$('.loader-overlay').hide();
 			}, 1400);
 		},
 		NavTransition: function() {
@@ -114,6 +132,7 @@
 
 				var href = $(this).attr("href");
 
+				$('.loader-overlay').show();
 				$("body").removeClass("is-pagetransitionend");
 				$("body").addClass("is-pagetransition");
 
@@ -121,6 +140,38 @@
 					window.location.href = href;
 				}, 600)
 			});
+		},
+		AnimateSlogan: function() {
+			var slogan = $('#welcome-slogan'),
+				animatedWord = slogan.find('.is-animate'),
+				words = ['City', 'Живи', 'Працюй', 'Навчайся', 'Відпочивай'],
+				timing = 4000;
+
+			function iterateWords() {
+				for(var i = 0; i < words.length; i++) {
+					(function(index) {
+
+						setTimeout(function() {
+							var splitWord = words[index].split('').map(function(el) {
+								return '<i>' + el + '</i>';
+							}).join('');
+
+							animatedWord.html(splitWord).find('i').each(function(i) {
+								var self = $(this);
+								setTimeout(function() {
+									self.addClass('is-visible');
+								}, (i + 1) * 100);
+							});
+						}, index * timing);
+					})(i);
+				}
+			}
+
+			iterateWords();
+
+			setInterval(function() {
+				iterateWords();
+			}, words.length * timing);
 		},
 		AnimateIcons: function() {
 				// if (!Modernizr.touchevents) {

@@ -1,15 +1,24 @@
 .header {
-  position: absolute;
   width: 100%;
+  position: fixed;
   background: transparent;
-  padding: 1.5rem 0 2rem 0;
-  z-index: 1;
+  padding: 2.5rem 0;
+  z-index: 10;
+  transform: translateY(0);
+  transition: all 1.2s cubic-bezier(.55,.085,0,.99);
+  &.is-hidden {
+    transform: translateY(-120%);
+  }
 
   &__content{
     display: flex;
+    align-items: center;
   }
 
   &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-left: auto;
   }
 
@@ -25,7 +34,31 @@
   &__nav {
     font-weight: 500;
     text-align: right;
-    margin-top: 1rem;
+  }
+
+  &__soc {
+    padding-left: 2.4rem;
+    font-size: 0;
+    line-height: 1;
+    &-link {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-left: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      overflow: hidden;
+      &:first-child {
+        margin-left: 0;
+      }
+      img {
+        width: 26px;
+        max-width: none;
+        height: 26px;
+        margin-top: -2px;
+        margin-left: -2px;
+      }
+    }
   }
 
   &__menu li {
@@ -34,7 +67,6 @@
 }
 
 .menu {
-
   &__link {
     position: relative;
     color: $color_white;
