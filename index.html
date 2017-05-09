@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendor.css">
+    <!-- build:css assets/vendor.css-->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -54,48 +58,58 @@
 
 <main class="body-wrapper" id="main" role="main">
 
-    <section class="sc welcome" id="welcome">
-      <div class="container">
-        
-      </div>
-    </section>
-    <section class="sc sc--scew about js-ic-a sc--dark" id="about">
-      <div class="container">
-    
-        <img class="js-ic-a__icon--circle icon-animate" src="assets/images/circle.svg" alt="icon-circle">
-        <img class="js-ic-a__icon--rhomb icon-animate" src="assets/images/rhomb.svg" alt="icon-rhomb">
-        <img class="js-ic-a__icon--star icon-animate" src="assets/images/star.svg" alt="icon-star">
-        <img class="js-ic-a__icon--stop icon-animate" src="assets/images/stop.svg" alt="icon-stop">
-    
-        <div class="row">
-          <div class="column col-md-3">
-            <div class="sc__header">
-              <h3 class="heading">Інфраструктура</h3>
-            </div>
-            <p class="about__text">Надсучасне та комфортне  місто у місті, інфраструктура якого відрізняється не тільки функціональністю та естетикою, але й якістю будівництва та сучасними технологіями енергоефективності</p>
-          </div>
-          <div class="column col-md-3">
-            <div class="sc__header">
-              <h3 class="heading">Кластер</h3>
-            </div>
-            <p class="about__text">Спільнота, що об’єднує провідні технологічні та інноваційні компанії,  R&D центри, інкубатори і акселератори, активно розвиаваючихся підприємців та молоді стартапи, які, інтегруючись, створюють кластер інновацій, спільну екосистему</p>
-          </div>
-          <div class="column col-md-3">
-            <div class="sc__header">
-              <h3 class="heading">Сінергія</h3>
-            </div>
-            <p class="about__text">Ми прагнемо побудувати таку систему, яка буде сприяти постійній взаємодії та комунікації між резидентами містечка задля досягнення синергії, яка буде давати свій позитивний ефект як для всієї спільноти, так і для кожного підприємця окремо</p>
-          </div>
-          <div class="column col-md-3">
-            <div class="sc__header">
-              <h3 class="heading">Можливості</h3>
-            </div>
-            <p class="about__text">Завдяки синергії горизонт можливостей не має меж та кордонів. Доступ до знань та технологій, взаємодія з однодумцями, консультаційна підтримка та багато інших можливостей пропонує LvivTech.City</p>
+    <div id="pin-container">
+      <section class="sc welcome" id="welcome">
+        <div class="container">
+      
+        </div>
+      
+        <div class="image-wrapper">
+          <div class="image-container" id="image-container">
+            <img src="assets/images/bg_one(2550)-min.jpg" alt="" id="layer-1">
+            <img src="assets/images/bluer(2550)-min.png" alt="" id="layer-2">
+            <img src="assets/images/claster(2550)-min.png" alt="" id="layer-3">
           </div>
         </div>
-    
-      </div>
-    </section>
+      </section>
+      <section class="sc sc--scew about js-ic-a sc--dark" id="about">
+        <div class="container">
+      
+          <img class="js-ic-a__icon--circle icon-animate" src="assets/images/circle.svg" alt="icon-circle">
+          <img class="js-ic-a__icon--rhomb icon-animate" src="assets/images/rhomb.svg" alt="icon-rhomb">
+          <img class="js-ic-a__icon--star icon-animate" src="assets/images/star.svg" alt="icon-star">
+          <img class="js-ic-a__icon--stop icon-animate" src="assets/images/stop.svg" alt="icon-stop">
+      
+          <div class="row">
+            <div class="column col-md-3">
+              <div class="sc__header">
+                <h3 class="heading">Інфраструктура</h3>
+              </div>
+              <p class="about__text">Надсучасне та комфортне  місто у місті, інфраструктура якого відрізняється не тільки функціональністю та естетикою, але й якістю будівництва та сучасними технологіями енергоефективності</p>
+            </div>
+            <div class="column col-md-3">
+              <div class="sc__header">
+                <h3 class="heading">Кластер</h3>
+              </div>
+              <p class="about__text">Спільнота, що об’єднує провідні технологічні та інноваційні компанії,  R&D центри, інкубатори і акселератори, активно розвиаваючихся підприємців та молоді стартапи, які, інтегруючись, створюють кластер інновацій, спільну екосистему</p>
+            </div>
+            <div class="column col-md-3">
+              <div class="sc__header">
+                <h3 class="heading">Сінергія</h3>
+              </div>
+              <p class="about__text">Ми прагнемо побудувати таку систему, яка буде сприяти постійній взаємодії та комунікації між резидентами містечка задля досягнення синергії, яка буде давати свій позитивний ефект як для всієї спільноти, так і для кожного підприємця окремо</p>
+            </div>
+            <div class="column col-md-3">
+              <div class="sc__header">
+                <h3 class="heading">Можливості</h3>
+              </div>
+              <p class="about__text">Завдяки синергії горизонт можливостей не має меж та кордонів. Доступ до знань та технологій, взаємодія з однодумцями, консультаційна підтримка та багато інших можливостей пропонує LvivTech.City</p>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+    </div>
     <section class="sc video">
       <video autoplay="" loop="" muted="" poster="">
           <source src="" type="video/webm">
@@ -172,7 +186,13 @@
     </div>
 </footer>
 
-<script src="assets/scripts.js"></script>
+<!-- build:js assets/scripts.js-->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 <script src="assets/js/libs/animation.gsap.min.js"></script>
