@@ -6,7 +6,6 @@
 		scrollNav();
 		madValidation.init();
 		FETechnology.Init();
-		FETechnology.Scroll();
 	});
 
 	$(window).on('load', function () {
@@ -79,6 +78,9 @@
 		Init: function() {
 			this.PageLoad();
 			this.NavTransition();
+			this.Scroll();
+			this.AnimateSlogan();
+			this.AnimateTitles();
 			this.AnimateIcons();
 		},
 		Scroll: function() {
@@ -98,6 +100,21 @@
 			.setPin('#pin-container')
 			.setTween(tl)
 			.addTo(controller);
+		},
+		AnimateTitles: function() {
+			var controller = new ScrollMagic.Controller();
+			var titles = $('.sc__title');
+
+			titles.each(function() {
+				var tl = new TimelineMax();
+				tl.fromTo(this, 0.5, {x: -100, opacity: 0}, {x: 0, opacity: 1});
+
+				var scene = new ScrollMagic.Scene({
+					triggerElement: this
+				})
+				.setTween(tl)
+				.addTo(controller);
+			});
 		},
 		PageLoad: function() {
 			setTimeout(function() {
@@ -123,6 +140,38 @@
 					window.location.href = href;
 				}, 600)
 			});
+		},
+		AnimateSlogan: function() {
+			var slogan = $('#welcome-slogan'),
+				animatedWord = slogan.find('.is-animate'),
+				words = ['City', 'Живи', 'Працюй', 'Навчайся', 'Відпочивай'],
+				timing = 4000;
+
+			function iterateWords() {
+				for(var i = 0; i < words.length; i++) {
+					(function(index) {
+
+						setTimeout(function() {
+							var splitWord = words[index].split('').map(function(el) {
+								return '<i>' + el + '</i>';
+							}).join('');
+
+							animatedWord.html(splitWord).find('i').each(function(i) {
+								var self = $(this);
+								setTimeout(function() {
+									self.addClass('is-visible');
+								}, (i + 1) * 100);
+							});
+						}, index * timing);
+					})(i);
+				}
+			}
+
+			iterateWords();
+
+			setInterval(function() {
+				iterateWords();
+			}, words.length * timing);
 		},
 		AnimateIcons: function() {
 				// if (!Modernizr.touchevents) {
