@@ -6,6 +6,23 @@
 		scrollNav();
 		madValidation.init();
 		FETechnology.Init();
+
+		var tl = new TimelineMax();
+
+		tl
+			.to('#image-container #layer-3', 1, {opacity: 1})
+			.to('#image-container #layer-2', 1, {opacity: 1});
+
+		var controller = new ScrollMagic.Controller();
+
+		var pinIntroScene = new ScrollMagic.Scene({
+			triggerElement: '#pin-container',
+			triggerHook: 0,
+			duration: 1.5 * $(window).height()
+		})
+		.setPin('#pin-container')
+		.setTween(tl)
+		.addTo(controller);
 	});
 
 	$(window).on('load', function () {
