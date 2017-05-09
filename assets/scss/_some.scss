@@ -17,28 +17,66 @@ body {
 	line-height: 1.3;
 	color: $primary_color;
 	position: relative;
-	&::before {
-		content: '';
-		height: 0;
-		background-color: #fff;
-	    overflow: hidden;
-	    transform: translate(-50%,-50%) rotate(-25deg);
-	    transition: height .9s cubic-bezier(.55,.085,0,.99);
-	    width: 200%;
-	    z-index: 900;
-		left: 50%;
-	    position: fixed;
-	    top: 50%;
-	}
 	&.is-pagetransition {
-		&::before {
-			height: 200%;
+		.loader-overlay {
+			&::before {
+				height: 250%;
+			}
+			&::after {
+				opacity: 1;
+			}
 		}
 	}
 	&.is-pagetransitionend {
-		&::before {
-			opacity: 0;
+		.loader-overlay {
+			&::before,
+			&::after {
+				opacity: 0;
+			}
 		}
+	}
+}
+
+.loader-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	&::before {
+		content: '';
+		width: 200%;
+		height: 0;
+		background-color: #fff;
+    overflow: hidden;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		z-index: 900;
+    transform: translate(-50%,-50%) rotate(-25deg);
+    transition: height .9s cubic-bezier(.55,.085,0,.99);
+	}
+	&::after {
+		content: '';
+		display: block;
+		width: 250px;
+		height: 50px;
+		background: {
+			image: url(assets/images/logo-black.svg);
+			repeat: no-repeat;
+			position: center;
+			size: contain;
+		}
+		position: absolute;
+		left: 50%;
+		top: 50vh;
+		z-index: 901;
+		opacity: 0;
+		transform: translate(-50%, -50%);
+		transition: opacity .9s cubic-bezier(.55,.085,0,.99);
 	}
 }
 

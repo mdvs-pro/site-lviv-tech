@@ -6,23 +6,7 @@
 		scrollNav();
 		madValidation.init();
 		FETechnology.Init();
-
-		var tl = new TimelineMax();
-
-		tl
-			.to('#image-container #layer-3', 1, {opacity: 1})
-			.to('#image-container #layer-2', 1, {opacity: 1});
-
-		var controller = new ScrollMagic.Controller();
-
-		var pinIntroScene = new ScrollMagic.Scene({
-			triggerElement: '#pin-container',
-			triggerHook: 0,
-			duration: 1.5 * $(window).height()
-		})
-		.setPin('#pin-container')
-		.setTween(tl)
-		.addTo(controller);
+		FETechnology.Scroll();
 	});
 
 	$(window).on('load', function () {
@@ -58,16 +42,14 @@
 	};
 
 	function scrollNav() {
-		//jQuery for page scrolling feature - requires jQuery Easing plugin
-		$(document).on('click touchstart', 'a.page-scroll', function (event) {
+		function toggleHeader() {
+			($(window).scrollTop() > 10) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
+		}
 
-			$('.js_mobile-nav').removeClass('open');
+		toggleHeader();
 
-			var $anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top
-			}, 1500, 'easeInOutExpo');
-			event.preventDefault();
+		$(window).on('scroll', function() {
+			toggleHeader();
 		});
 	}
 
@@ -99,13 +81,32 @@
 			this.NavTransition();
 			this.AnimateIcons();
 		},
+		Scroll: function() {
+			var tl = new TimelineMax();
+
+			tl
+				.to('#image-container #layer-3', 1, {opacity: 1})
+				.to('#image-container #layer-2', 1, {opacity: 1});
+
+			var controller = new ScrollMagic.Controller();
+
+			var pinIntroScene = new ScrollMagic.Scene({
+				triggerElement: '#pin-container',
+				triggerHook: 0,
+				duration: 1.5 * $(window).height()
+			})
+			.setPin('#pin-container')
+			.setTween(tl)
+			.addTo(controller);
+		},
 		PageLoad: function() {
 			setTimeout(function() {
-				$("body").removeClass("is-pagetransition")
+				$("body").removeClass("is-pagetransition");
 			}, 100);
 
 			setTimeout(function() {
-				$("body").addClass("is-pagetransitionend")
+				$("body").addClass("is-pagetransitionend");
+				$('.loader-overlay').hide();
 			}, 1400);
 		},
 		NavTransition: function() {
@@ -114,6 +115,7 @@
 
 				var href = $(this).attr("href");
 
+				$('.loader-overlay').show();
 				$("body").removeClass("is-pagetransitionend");
 				$("body").addClass("is-pagetransition");
 
