@@ -36,9 +36,14 @@
 
   &__inner {
     position: relative;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
   }
 
   &__launch {
+    display: block;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
     color: $secondary_color;
     font-weight: 700;
     text-transform: uppercase;

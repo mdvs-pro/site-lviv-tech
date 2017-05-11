@@ -59,9 +59,9 @@
 			var staticYpos;
 			var opt = {
 				shapecolor: "#2e2e2e",
-				radius: 2,
-				distance: 100,
-				circleopacity: 1,
+				radius: 5,
+				distance: 200,
+				circleopacity: 2,
 				speed: .4
 			};
 
@@ -223,6 +223,7 @@
 			this.AnimateSlogan();
 			this.AnimateTitles();
 			this.AnimateIcons();
+			this.VideoText();
 		},
 		Scroll: function() {
 			var tl = new TimelineMax();
@@ -248,10 +249,27 @@
 
 			titles.each(function() {
 				var tl = new TimelineMax();
-				tl.fromTo(this, 0.5, {x: -100, opacity: 0}, {x: 0, opacity: 1});
+				tl.fromTo(this, 0.5, {x: -300, opacity: 0}, {x: 0, opacity: 1});
 
 				var scene = new ScrollMagic.Scene({
 					triggerElement: this
+				})
+				.setTween(tl)
+				.addTo(controller);
+			});
+		},
+		VideoText: function() {
+			var controller = new ScrollMagic.Controller();
+			var vt = $('.video__text');
+
+			vt.each(function() {
+				var tl = new TimelineMax();
+				tl.fromTo(this, 0.5, {y: 300, opacity: 0}, {y: 0, opacity: 1});
+
+				var scene = new ScrollMagic.Scene({
+					triggerElement: '#videosc .container',
+					triggerHook: 'onLeave',
+					offset: -200
 				})
 				.setTween(tl)
 				.addTo(controller);
