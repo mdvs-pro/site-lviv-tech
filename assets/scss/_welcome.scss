@@ -1,7 +1,8 @@
 .welcome {
   background: #000c1a;
-  height: 100rem;
-  padding-top: 22rem;
+  height: 1000px;
+  padding-top: 220px;
+  overflow: hidden;
 
   &__sub-slogan {
     font-size: 5.5rem;
@@ -59,11 +60,11 @@
   position: absolute;
   left: 0;
   top: 0;
+  overflow: hidden;
   img {
     position: absolute;
     left: 0;
     top: 0;
-    // transform: translate(-50%, 0);
     &#layer-2,
     &#layer-3 {
       opacity: 0;
