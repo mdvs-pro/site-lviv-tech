@@ -42,7 +42,7 @@
 
 	function scrollNav() {
 		function toggleHeader() {
-			($(window).scrollTop() > 10) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
+			($(window).scrollTop() > 50) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
 		}
 
 		toggleHeader();
@@ -93,11 +93,11 @@
 			var controller = new ScrollMagic.Controller();
 
 			var pinIntroScene = new ScrollMagic.Scene({
-				triggerElement: '#pin-container',
+				triggerElement: '#welcome',
 				triggerHook: 0,
-				duration: 1.5 * $(window).height()
+				duration: '150%'
 			})
-			.setPin('#pin-container')
+			.setPin('#welcome')
 			.setTween(tl)
 			.addTo(controller);
 		},
@@ -152,6 +152,8 @@
 					(function(index) {
 
 						setTimeout(function() {
+							(index === 0) ? animatedWord.css('color', '#fff') : animatedWord.css('color', '#f7901e');
+
 							var splitWord = words[index].split('').map(function(el) {
 								return '<i>' + el + '</i>';
 							}).join('');
@@ -163,6 +165,7 @@
 								}, (i + 1) * 100);
 							});
 						}, index * timing);
+
 					})(i);
 				}
 			}
@@ -174,31 +177,31 @@
 			}, words.length * timing);
 		},
 		AnimateIcons: function() {
-				// if (!Modernizr.touchevents) {
-						var a = new ScrollMagic.Controller,
-								b = new TimelineMax;
-						b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
-								marginLeft: "-41.5%",
-								marginTop: "34%",
-								rotation: 360
-						}), TweenMax.to(".js-ic-a__icon--rhomb", 1, {
-								marginLeft: "-15.5%",
-								marginTop: "25%",
-								rotation: 360
-						}), TweenMax.to(".js-ic-a__icon--star", 1, {
-								marginLeft: "9%",
-								marginTop: "16%",
-								rotation: 360
-						}), TweenMax.to(".js-ic-a__icon--stop", 1, {
-								marginLeft: "34%",
-								marginTop: "7%",
-								rotation: 360
-						})]);
-						new ScrollMagic.Scene({
-								triggerElement: ".js-ic-a",
-								duration: 400
-						}).setTween(b).addTo(a)
-				// }
+		// if (!Modernizr.touchevents) {
+				var a = new ScrollMagic.Controller,
+						b = new TimelineMax;
+				b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
+						marginLeft: "-41.5%",
+						marginTop: "34%",
+						rotation: 360
+				}), TweenMax.to(".js-ic-a__icon--rhomb", 1, {
+						marginLeft: "-15.5%",
+						marginTop: "25%",
+						rotation: 360
+				}), TweenMax.to(".js-ic-a__icon--star", 1, {
+						marginLeft: "9%",
+						marginTop: "16%",
+						rotation: 360
+				}), TweenMax.to(".js-ic-a__icon--stop", 1, {
+						marginLeft: "34%",
+						marginTop: "7%",
+						rotation: 360
+				})]);
+				new ScrollMagic.Scene({
+						triggerElement: ".js-ic-a",
+						duration: 400
+				}).setTween(b).addTo(a)
+		// }
 		},
 	}
 

@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendor.css">
+    <!-- build:css assets/vendor.css-->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -59,12 +63,10 @@
 
     <div id="pin-container">
       <section class="sc welcome" id="welcome">
-        <div class="image-wrapper">
-          <div class="image-container" id="image-container">
-            <img src="assets/images/bg_one(2550)-min.jpg" alt="" id="layer-1">
-            <img src="assets/images/bluer(2550)-min.png" alt="" id="layer-2">
-            <img src="assets/images/claster(2550)-min.png" alt="" id="layer-3">
-          </div>
+        <div class="image-container" id="image-container">
+          <img src="assets/images/bg_one(1920)-min.jpg" alt="" id="layer-1">
+          <img src="assets/images/bluer(1920)-min.png" alt="" id="layer-2">
+          <img src="assets/images/claster(1920)-min.png" alt="" id="layer-3">
         </div>
       
         <div class="container-wrap">
@@ -122,8 +124,8 @@
       </div>
     
       <video autoplay="" loop="" muted="" poster="">
-          <source src="" type="video/webm">
-          <source src="http://campverholy.businesscamp.com.ua/wp-content/uploads/2017/02/Camp-for-web_2mb.mp4" type="video/mp4">
+          <!-- <source src="" type="video/webm">
+          <source src="http://campverholy.businesscamp.com.ua/wp-content/uploads/2017/02/Camp-for-web_2mb.mp4" type="video/mp4"> -->
           <!--<source src="./assets/images/lviv4.mp4" type="video/mp4">-->
           <!-- <source src="video/top-video.ogv" type="video/ogv"> -->
       </video>
@@ -200,7 +202,13 @@
 
 <div class="loader-overlay"></div>
 
-<script src="assets/scripts.js"></script>
+<!-- build:js assets/scripts.js-->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 <script src="assets/js/libs/animation.gsap.min.js"></script>
