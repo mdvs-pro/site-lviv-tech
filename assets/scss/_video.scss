@@ -1,6 +1,47 @@
 .video {
-  background: url('/assets/images/bg_video.jpg') no-repeat center center / cover;
-  height: 120rem;
+  background: url('assets/images/bg_video.jpg') no-repeat center center / cover;
+  height: 130rem;
   padding: 0;
-  margin-top: -20rem;
+  margin-top: -25rem;
+
+  &__content {
+    height: 100%;
+    padding-top: 25rem;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 42rem;
+    max-width: 57rem;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 400;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: rgba(0,0,0,0.4);
+      height: 300%;
+      width: 300%;
+      top: -65%;
+      left: -100%;
+      transform: rotate(-25deg);
+      z-index: 0;
+    }
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__launch {
+    color: $secondary_color;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }

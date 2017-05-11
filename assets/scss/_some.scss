@@ -10,7 +10,7 @@ html ::selection {
 }
 
 body {
-	background: $bgcolor_light;
+	background: #000000;
 	@include font-size(16px);
 	font-family: $primary_font;
 	font-weight: 300;
@@ -83,6 +83,15 @@ body {
 .body-wrapper {
 	overflow: hidden;
 }
+
+.container {
+
+	&--full {
+		position: relative;
+		height: 100%;
+	}
+}
+
 
 .container-wrap {
 	width: 100%;
@@ -187,7 +196,7 @@ ul {
 }
 
 .sc {
-	background: #000000;
+	background: transparent;
 	position: relative;
 	padding: 4rem 0;
 

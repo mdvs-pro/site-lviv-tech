@@ -87,7 +87,7 @@
       transition: all 0.3s ease-in-out 0s;
     }
 
-    &:hover:after {
+    &:hover:after, &.active:after {
       visibility: visible;
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
