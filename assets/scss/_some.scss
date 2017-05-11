@@ -222,15 +222,20 @@ ul {
 		width: 100%;
 		z-index: 100;
 
-		&:before {
-			content: "";
-			background: #141414;
+		.back {
 			position: absolute;
-			width: 300%;
-			height: 100%;
 			top: 0;
 			left: -100%;
+			background: #141414;
+			width: 300%;
+			height: 100%;
+			z-index: 0;
 			transform: rotate(-25deg);
+		}
+
+		.anim-canvas {
+			position: absolute;
+			top: 20%;
 		}
 
 		.sc__header {

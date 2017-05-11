@@ -5,11 +5,13 @@
     position: relative;
 
     label {
+      position: relative;
       display: inline-block;
       background: $bgcolor_light;
       transform: translateY(45%);
       padding-bottom: 0.5rem;
       padding-right: 5rem;
+      z-index: 1;
     }
 
     input {
