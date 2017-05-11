@@ -3,7 +3,7 @@
 	// Listen for the jQuery ready event on the document
 	$(function () {
 		// on ready
-		scrollNav();
+		// scrollNav();
 		madValidation.init();
 		FETechnology.Init();
 	});
@@ -42,7 +42,7 @@
 
 	function scrollNav() {
 		function toggleHeader() {
-			($(window).scrollTop() > 10) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
+			($(window).scrollTop() > 100) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
 		}
 
 		toggleHeader();
@@ -81,7 +81,7 @@
 			this.Scroll();
 			this.AnimateSlogan();
 			this.AnimateTitles();
-			this.AnimateIcons();
+			// this.AnimateIcons();
 		},
 		Scroll: function() {
 			var tl = new TimelineMax();
@@ -95,7 +95,7 @@
 			var pinIntroScene = new ScrollMagic.Scene({
 				triggerElement: '#pin-container',
 				triggerHook: 0,
-				duration: 1.5 * $(window).height()
+				duration: '100%'
 			})
 			.setPin('#pin-container')
 			.setTween(tl)
