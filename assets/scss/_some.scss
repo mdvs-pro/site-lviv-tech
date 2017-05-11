@@ -56,7 +56,7 @@ body {
 		left: 50%;
 		top: 50%;
 		z-index: 900;
-    transform: translate(-50%,-50%) rotate(-15deg);
+    transform: translate(-50%,-50%) rotate(-25deg);
     transition: height .9s cubic-bezier(.55,.085,0,.99);
 	}
 	&::after {
@@ -187,11 +187,12 @@ ul {
 }
 
 .sc {
+	background: #000000;
 	position: relative;
 	padding: 4rem 0;
 
 	&__title {
-		font-size: 5.5rem;
+		font-size: 4.5rem;
 		line-height: 1;
 		font-weight: 700;
 		color: #fff;
@@ -223,16 +224,13 @@ ul {
 
 		&:before {
 			content: "";
-			background: #414042 ; /* Old browsers */
-			background: -moz-linear-gradient(top, #414042 0%, #000000 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(top, #414042 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to bottom, #414042 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			background: #141414;
 			position: absolute;
 			width: 300%;
 			height: 100%;
 			top: 0;
 			left: -100%;
-			transform: rotate(-15deg);
+			transform: rotate(-25deg);
 		}
 
 		.sc__header {
