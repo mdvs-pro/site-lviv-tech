@@ -181,6 +181,13 @@
 							if (f > b) {
 									c.height() - (c.scrollTop() + d.height()) > 50 ? e.addClass("is-hidden") : e.removeClass("is-hidden")
 							} else e.removeClass("is-hidden");
+
+							if (f > 700) {
+								e.addClass("show-bg")
+							} else {
+								e.removeClass("show-bg");
+							}
+
 							b = f
 					}
 			})

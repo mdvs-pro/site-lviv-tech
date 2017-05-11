@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   position: fixed;
-  background: rgba(5,5,5,.35);
+  background: transparent;
   padding: 2.5rem 0;
   z-index: 10;
   transform: translateY(0);
@@ -9,6 +9,9 @@
   z-index: 200;
   &.is-hidden {
     transform: translateY(-120%);
+  }
+  &.show-bg {
+    background: rgba(5,5,5,.35);
   }
 
   &__content{
