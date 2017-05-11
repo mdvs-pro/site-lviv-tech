@@ -3,7 +3,7 @@
 	// Listen for the jQuery ready event on the document
 	$(function () {
 		// on ready
-		scrollNav();
+		StickyNav();
 		madValidation.init();
 		FETechnology.Init();
 		canvasBlock();
@@ -170,16 +170,20 @@
 }
 
 
-	function scrollNav() {
-		function toggleHeader() {
-			($(window).scrollTop() > 50) ? $('.header').addClass('is-hidden') : $('.header').removeClass('is-hidden');
-		}
-
-		toggleHeader();
-
-		$(window).on('scroll', function() {
-			toggleHeader();
-		});
+	function StickyNav() {
+			var a, b = 0,
+					c = $(document),
+					d = $(window),
+					e = $(".js-navbar");
+			a = Modernizr.touch ? 150 : 25, d.scroll(function() {
+					var f = $(this).scrollTop();
+					if (Math.abs(b - f) >= a && f > 0) {
+							if (f > b) {
+									c.height() - (c.scrollTop() + d.height()) > 50 ? e.addClass("is-hidden") : e.removeClass("is-hidden")
+							} else e.removeClass("is-hidden");
+							b = f
+					}
+			})
 	}
 
 	var madValidation = {
