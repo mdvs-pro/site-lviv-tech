@@ -235,7 +235,7 @@
 			var controller = new ScrollMagic.Controller();
 
 			var pinIntroScene = new ScrollMagic.Scene({
-				triggerElement: '#welcome',
+				triggerElement: '#pin-container',
 				triggerHook: 0,
 				duration: '150%'
 			})
