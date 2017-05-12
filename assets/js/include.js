@@ -92,7 +92,6 @@
 			var canvases = document.getElementsByClassName('anim-canvas');
 
 			[].forEach.call(canvases, function(canvas){
-				console.log(canvas);
 				createCanvas(canvas);
 			});
 
