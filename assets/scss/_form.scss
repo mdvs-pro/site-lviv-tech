@@ -21,7 +21,7 @@
     }
   }
 
-  &__inp {
+  &__inp, .selectize-input {
     display: inline-block;
     width: 100%;
     border: .2rem solid #000000;
@@ -30,6 +30,7 @@
     font-weight: 100;
     padding: 1.5rem 1.5rem;
     border-radius: .3rem;
+    box-sizing: border-box;
   }
 
   &__tarea {

@@ -79,6 +79,7 @@
 			this.StickyNav();
 			this.AnimateCanvas();
 			this.SmoothScrolling();
+			this.SelectCustom();
 		},
 		Scroll: function() {
 			var tl = new TimelineMax();
@@ -97,6 +98,9 @@
 			.setPin('#pin-container')
 			.setTween(tl)
 			.addTo(controller);
+		},
+		SelectCustom: function() {
+			$('select').selectize();
 		},
 		AnimateCanvas: function() {
 			var canvases = document.getElementsByClassName('anim-canvas');
