@@ -1,8 +1,15 @@
 .welcome {
   background: #000;
-  height: 1000px;
   padding-top: 220px;
   overflow: hidden;
+
+  @media (min-width: 500px) {
+    min-height: 1100px;
+  }
+
+  @media (min-width: 1400px) {
+    min-height: 1400px;
+  }
 
   &__sub-slogan {
     font-size: 5.5rem;
@@ -79,12 +86,17 @@
   top: 0;
   overflow: hidden;
   img {
+    width: 900px;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     &#layer-2,
     &#layer-3 {
       opacity: 0;
+    }
+
+    @media (min-width: 1400px) {
+      width: 1200px;
     }
   }
 }

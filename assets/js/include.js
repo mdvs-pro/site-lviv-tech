@@ -92,9 +92,9 @@
 			var pinIntroScene = new ScrollMagic.Scene({
 				triggerElement: '#pin-container',
 				triggerHook: 0,
-				duration: '150%'
+				duration: 1.5 * $(window).height()
 			})
-			.setPin('#welcome')
+			.setPin('#pin-container')
 			.setTween(tl)
 			.addTo(controller);
 		},
