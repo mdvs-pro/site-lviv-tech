@@ -5,6 +5,16 @@
 		// on ready
 		madValidation.init();
 		LvivTechnology.Init();
+		modalVideo.init();
+
+		$(document).keyup(function(a) // esc btn
+		{
+			if ((a.keyCode == 27) && ($(modalVideo.className).hasClass(modalVideo.activeClass))) {
+				modalVideo.close();
+			} else if ((a.keyCode == 27) && ($(mobileNav.className).hasClass(mobileNav.activeClass))) {
+				mobileNav.close();
+			}
+		});
 	});
 
 	$(window).on('load', function () {
@@ -369,5 +379,38 @@
 			});
 		}
 	}
+
+	var modalVideo = {
+		$self: $(this),
+		className: '.modal__video',
+		linkClassName: '.modal__link',
+		modalBtn: '.modal__close',
+		activeClass: 'open',
+		init: function () {
+			$(document).on('click', this.linkClassName, function () {modalVideo.open($(this).data('url'));});
+			$(document).on('click', this.modalBtn, function () {modalVideo.close();});
+		},
+		open: function (data_url) {
+			$(this.className).addClass(this.activeClass);
+
+			data_url = modalVideo.youtubeParser(data_url);
+			data_url = "//www.youtube.com/embed/" + data_url + '?autoplay=1';
+
+			$(this.className).prepend($("<iframe />")
+				.attr({ width: '100%', height:'100%', src: data_url, frameborder: 0, "allowfullscreen": "" }));
+		},
+		close: function () {
+			$(this.className).removeClass(this.activeClass);
+			$(this.className).find('iframe').remove();
+		},
+		toggle: function () {
+			$(this.className).hasClass(this.activeClass) ? this.close() : this.open();
+		},
+		youtubeParser: function(url){
+			var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+			var match = url.match(regExp);
+			return (match&&match[7].length==11)? match[7] : false;
+		}
+	};
 
 }(window.jQuery, window, document));
