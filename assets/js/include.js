@@ -3,10 +3,8 @@
 	// Listen for the jQuery ready event on the document
 	$(function () {
 		// on ready
-		StickyNav();
 		madValidation.init();
-		FETechnology.Init();
-		canvasBlock();
+		LvivTechnology.Init();
 	});
 
 	$(window).on('load', function () {
@@ -41,158 +39,6 @@
 		}
 	};
 
-	function canvasBlock() {
-		var canvases = document.getElementsByClassName('anim-canvas');
-
-		[].forEach.call(canvases, function(canvas){
-			console.log(canvas);
-			createCanvas(canvas);
-		});
-
-		function createCanvas(canvas) {
-
-
-			var ctx = canvas.getContext('2d');
-			var shapes = [];
-			var num = 50;
-			var staticXpos;
-			var staticYpos;
-			var opt = {
-				shapecolor: "#2e2e2e",
-				radius: 5,
-				distance: 200,
-				circleopacity: 2,
-				speed: .4
-			};
-
-			var w = canvas.width = window.innerWidth;
-			var h = canvas.height = window.innerHeight;
-
-			addEventListener('resize', function() {
-				w = canvas.width = window.innerWidth;
-				h = canvas.height = window.innerHeight;
-			});
-			//helper functions
-			function random(min, max) {
-				return Math.floor(Math.random() * (max - min + 1) + min);
-			}
-
-			function clearcanvas() {
-				ctx.clearRect(0, 0, w, h);
-			}
-
-			function getCords(e) {
-				var rect = canvas.getBoundingClientRect();
-				return {
-					x: e.clientX - rect.left,
-					y: e.clientY - rect.top
-				};
-			}
-
-			function createShapes(Xpos, Ypos) {
-				this.x = Xpos ? Xpos : random(0, w);
-				this.y = Ypos ? Ypos : random(0, h);
-				this.speed = opt.speed;
-				this.vx = Math.cos(random(0, 360)) * this.speed;
-				this.vy = Math.sin(random(0, 360)) * this.speed;
-				this.r = opt.radius;
-				this.color = opt.shapecolor;
-				this.opacity = opt.circleopacity;
-				this.draw = function() {
-					ctx.beginPath();
-					ctx.globalCompositeOperation = 'source-over';
-					ctx.globalAlpha = this.opacity;
-					ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
-					ctx.closePath();
-					ctx.fillStyle = this.color;
-					ctx.fill();
-
-				};
-				this.move = function() {
-					this.x += this.vx;
-					this.y += this.vy;
-					if (this.x >= w || this.x <= 0) {
-						this.vx *= -1;
-					}
-					if (this.y >= h || this.y <= 0) {
-						this.vy *= -1;
-					}
-					this.x > w ? this.x = w : this.x;
-					this.y > h ? this.y = h : this.y;
-					this.x < 0 ? this.x = 0 : this.x;
-					this.y < 0 ? this.y = 0 : this.y;
-				};
-			}
-
-			function check(point1, rest) {
-				for (var j = 0; j < rest.length; j++) {
-					var yd = point1.y - rest[j].y;
-					var xd = point1.x - rest[j].x;
-					var d = Math.sqrt(xd * xd + yd * yd);
-					if (d < opt.distance) {
-						ctx.beginPath();
-						ctx.globalAlpha = (1 - (d / opt.distance));
-						ctx.globalCompositeOperation = 'destination-over';
-						ctx.lineWidth = 1;
-						ctx.moveTo(point1.x, point1.y);
-						ctx.lineTo(rest[j].x, rest[j].y);
-						ctx.strokeStyle = opt.shapecolor;
-						ctx.lineCap = "round";
-						ctx.closePath();
-						ctx.stroke();
-					}
-				}
-			}
-
-			function loop() {
-				clearcanvas();
-				shapes[0].x = staticXpos;
-				shapes[0].y = staticYpos;
-				shapes[0].move();
-				shapes[0].draw();
-				for (var i = 1; i < shapes.length; i++) {
-					shapes[i].move();
-					shapes[i].draw();
-					check(shapes[i], shapes);
-				}
-				window.requestAnimationFrame(loop);
-			}
-
-			function init() {
-				for (var i = 0; i < num; i++) {
-					shapes.push(new createShapes());
-				}
-				window.requestAnimationFrame(loop);
-			}
-
-			init();
-		}
-}
-
-
-	function StickyNav() {
-			var a, b = 0,
-					c = $(document),
-					d = $(window),
-					e = $(".js-navbar");
-			a = Modernizr.touch ? 150 : 25, d.scroll(function() {
-					var f = $(this).scrollTop();
-					if (Math.abs(b - f) >= a && f > 0) {
-							if (f > b) {
-									c.height() - (c.scrollTop() + d.height()) > 50 ? e.addClass("is-hidden") : e.removeClass("is-hidden")
-							} else e.removeClass("is-hidden");
-
-							if (f > 700) {
-								e.addClass("show-bg")
-							} else {
-								e.removeClass("show-bg");
-							}
-
-							b = f
-					}
-			})
-	}
-
 	var madValidation = {
 		option: {
 			formClass: '.md-form'
@@ -211,11 +57,7 @@
 		}
 	}
 
-	function aboutIcon() {
-		var className = '.js-ic-a';
-	}
-
-	var FETechnology = {
+	var LvivTechnology = {
 		Init: function() {
 			this.PageLoad();
 			this.NavTransition();
@@ -224,6 +66,9 @@
 			this.AnimateTitles();
 			this.AnimateIcons();
 			this.VideoText();
+			this.StickyNav();
+			this.AnimateCanvas();
+			this.SmoothScrolling();
 		},
 		Scroll: function() {
 			var tl = new TimelineMax();
@@ -242,6 +87,133 @@
 			.setPin('#welcome')
 			.setTween(tl)
 			.addTo(controller);
+		},
+		AnimateCanvas: function() {
+			var canvases = document.getElementsByClassName('anim-canvas');
+
+			[].forEach.call(canvases, function(canvas){
+				console.log(canvas);
+				createCanvas(canvas);
+			});
+
+			function createCanvas(canvas) {
+
+
+				var ctx = canvas.getContext('2d');
+				var shapes = [];
+				var num = 50;
+				var staticXpos;
+				var staticYpos;
+				var opt = {
+					shapecolor: "#2e2e2e",
+					radius: 5,
+					distance: 200,
+					circleopacity: 2,
+					speed: .4
+				};
+
+				var w = canvas.width = window.innerWidth;
+				var h = canvas.height = window.innerHeight;
+
+				addEventListener('resize', function() {
+					w = canvas.width = window.innerWidth;
+					h = canvas.height = window.innerHeight;
+				});
+				//helper functions
+				function random(min, max) {
+					return Math.floor(Math.random() * (max - min + 1) + min);
+				}
+
+				function clearcanvas() {
+					ctx.clearRect(0, 0, w, h);
+				}
+
+				function getCords(e) {
+					var rect = canvas.getBoundingClientRect();
+					return {
+						x: e.clientX - rect.left,
+						y: e.clientY - rect.top
+					};
+				}
+
+				function createShapes(Xpos, Ypos) {
+					this.x = Xpos ? Xpos : random(0, w);
+					this.y = Ypos ? Ypos : random(0, h);
+					this.speed = opt.speed;
+					this.vx = Math.cos(random(0, 360)) * this.speed;
+					this.vy = Math.sin(random(0, 360)) * this.speed;
+					this.r = opt.radius;
+					this.color = opt.shapecolor;
+					this.opacity = opt.circleopacity;
+					this.draw = function() {
+						ctx.beginPath();
+						ctx.globalCompositeOperation = 'source-over';
+						ctx.globalAlpha = this.opacity;
+						ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+						ctx.closePath();
+						ctx.fillStyle = this.color;
+						ctx.fill();
+
+					};
+					this.move = function() {
+						this.x += this.vx;
+						this.y += this.vy;
+						if (this.x >= w || this.x <= 0) {
+							this.vx *= -1;
+						}
+						if (this.y >= h || this.y <= 0) {
+							this.vy *= -1;
+						}
+						this.x > w ? this.x = w : this.x;
+						this.y > h ? this.y = h : this.y;
+						this.x < 0 ? this.x = 0 : this.x;
+						this.y < 0 ? this.y = 0 : this.y;
+					};
+				}
+
+				function check(point1, rest) {
+					for (var j = 0; j < rest.length; j++) {
+						var yd = point1.y - rest[j].y;
+						var xd = point1.x - rest[j].x;
+						var d = Math.sqrt(xd * xd + yd * yd);
+						if (d < opt.distance) {
+							ctx.beginPath();
+							ctx.globalAlpha = (1 - (d / opt.distance));
+							ctx.globalCompositeOperation = 'destination-over';
+							ctx.lineWidth = 1;
+							ctx.moveTo(point1.x, point1.y);
+							ctx.lineTo(rest[j].x, rest[j].y);
+							ctx.strokeStyle = opt.shapecolor;
+							ctx.lineCap = "round";
+							ctx.closePath();
+							ctx.stroke();
+						}
+					}
+				}
+
+				function loop() {
+					clearcanvas();
+					shapes[0].x = staticXpos;
+					shapes[0].y = staticYpos;
+					shapes[0].move();
+					shapes[0].draw();
+					for (var i = 1; i < shapes.length; i++) {
+						shapes[i].move();
+						shapes[i].draw();
+						check(shapes[i], shapes);
+					}
+					window.requestAnimationFrame(loop);
+				}
+
+				function init() {
+					for (var i = 0; i < num; i++) {
+						shapes.push(new createShapes());
+					}
+					window.requestAnimationFrame(loop);
+				}
+
+				init();
+			}
 		},
 		AnimateTitles: function() {
 			var controller = new ScrollMagic.Controller();
@@ -284,6 +256,29 @@
 				$("body").addClass("is-pagetransitionend");
 				$('.loader-overlay').hide();
 			}, 1400);
+		},
+		StickyNav: function() {
+			var a, b = 0,
+					c = $(document),
+					d = $(window),
+					e = $(".js-navbar");
+
+			a = Modernizr.touch ? 150 : 25, d.scroll(function() {
+					var f = $(this).scrollTop();
+					if (Math.abs(b - f) >= a && f > 0) {
+							if (f > b) {
+									c.height() - (c.scrollTop() + d.height()) > 50 ? e.addClass("is-hidden") : e.removeClass("is-hidden")
+							} else e.removeClass("is-hidden");
+
+							if (f > 700) {
+								e.addClass("show-bg")
+							} else {
+								e.removeClass("show-bg");
+							}
+
+							b = f
+					}
+			})
 		},
 		NavTransition: function() {
 			$(".menu__link, .header__logo").on("click", function(e) {
@@ -336,7 +331,7 @@
 			}, words.length * timing);
 		},
 		AnimateIcons: function() {
-		// if (!Modernizr.touchevents) {
+		if (!Modernizr.touchevents) {
 				var a = new ScrollMagic.Controller,
 						b = new TimelineMax;
 				b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
@@ -360,8 +355,20 @@
 						triggerElement: ".js-ic-a",
 						duration: 400
 				}).setTween(b).addTo(a)
-		// }
+			}
 		},
+		SmoothScrolling: function() {
+			$(document).on('click touchstart', 'a.page-scroll', function (event) {
+				event.preventDefault();
+				$('.js_mobile-nav').removeClass('open');
+
+				var $anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1500);
+				
+			});
+		}
 	}
 
 }(window.jQuery, window, document));
