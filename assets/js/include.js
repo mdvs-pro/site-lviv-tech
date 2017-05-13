@@ -67,6 +67,8 @@
 		}
 	}
 
+	var globalController = new ScrollMagic.Controller();
+
 	var LvivTechnology = {
 		Init: function() {
 			this.PageLoad();
@@ -88,16 +90,15 @@
 				.to('#image-container #layer-2', 1, {opacity: 1})
 				.to('#image-container #layer-3', 1, {opacity: 1});
 
-			var controller = new ScrollMagic.Controller();
-
 			var pinIntroScene = new ScrollMagic.Scene({
 				triggerElement: '#pin-container',
 				triggerHook: 0,
-				duration: 1.5 * $(window).height()
+				// duration: 1.5 * $(window).height()
+				duration: '100%'
 			})
 			.setPin('#pin-container')
 			.setTween(tl)
-			.addTo(controller);
+			.addTo(globalController);
 		},
 		SelectCustom: function() {
 			$('select').selectize();
@@ -228,7 +229,6 @@
 			}
 		},
 		AnimateTitles: function() {
-			var controller = new ScrollMagic.Controller();
 			var titles = $('.sc__title');
 
 			titles.each(function() {
@@ -240,11 +240,10 @@
 					triggerHook: 0.3
 				})
 				.setTween(tl)
-				.addTo(controller);
+				.addTo(globalController);
 			});
 		},
 		VideoText: function() {
-			var controller = new ScrollMagic.Controller();
 			var vt = $('.video__text');
 
 			vt.each(function() {
@@ -257,7 +256,7 @@
 					offset: -200
 				})
 				.setTween(tl)
-				.addTo(controller);
+				.addTo(globalController);
 			});
 		},
 		PageLoad: function() {
@@ -345,8 +344,8 @@
 		},
 		AnimateIcons: function() {
 		if (!Modernizr.touchevents) {
-				var a = new ScrollMagic.Controller,
-						b = new TimelineMax;
+				var b = new TimelineMax;
+
 				b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
 						marginLeft: "-41.5%",
 						marginTop: "34%",
@@ -367,7 +366,7 @@
 				new ScrollMagic.Scene({
 						triggerElement: ".js-ic-a",
 						duration: 400
-				}).setTween(b).addTo(a)
+				}).setTween(b).addTo(globalController)
 			}
 		},
 		SmoothScrolling: function() {
