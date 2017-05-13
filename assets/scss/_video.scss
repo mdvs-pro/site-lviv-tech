@@ -1,5 +1,5 @@
 .video {
-  background: url('assets/images/bg_video.jpg') no-repeat center center / cover;
+  background: url('assets/images/video-bg.jpg') no-repeat center center / cover;
   height: 150rem;
   padding: 0;
   margin-top: -35rem;
@@ -44,13 +44,27 @@
     position: relative;
     display: block;
     padding-bottom: 2rem;
-    font-size: 1.8rem;
-    color: $secondary_color;
+    transform: translateY(-120%);
+
+    width: 100%;
+    max-width: 295px;
+    height: 54px;
+    margin: 0 auto;
+    border: 2px solid $secondary_color;
+    border-radius: 27px;
+    font-size: 18px;
     font-weight: 700;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
-    transform: translateY(-120%);
+    transition: all .3s cubic-bezier(.55,.085,0,.99);
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $secondary_color;
+    }
   }
 
   &__icon {

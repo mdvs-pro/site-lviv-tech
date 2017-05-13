@@ -77,7 +77,7 @@
 			this.AnimateIcons();
 			this.VideoText();
 			this.StickyNav();
-			this.AnimateCanvas();
+			// this.AnimateCanvas();
 			this.SmoothScrolling();
 			this.SelectCustom();
 		},
@@ -391,7 +391,10 @@
 		modalBtn: '.modal__close',
 		activeClass: 'open',
 		init: function () {
-			$(document).on('click', this.linkClassName, function () {event.preventDefault();modalVideo.open($(this).data('url'));});
+			$(document).on('click', this.linkClassName, function () {
+				event.preventDefault();
+				modalVideo.open($(this).data('url'));
+			});
 			$(document).on('click', this.modalBtn, function () {modalVideo.close();});
 		},
 		open: function (data_url) {
