@@ -1,14 +1,14 @@
 .welcome {
   background: #000;
-  padding-top: 220px;
+  padding-top: 22rem;
   overflow: hidden;
 
   @media (min-width: 500px) {
-    min-height: 1100px;
+    min-height: 110rem;
   }
 
   @media (min-width: 1400px) {
-    min-height: 1400px;
+    min-height: 140rem;
   }
 
   &__sub-slogan {
@@ -51,20 +51,20 @@
     color: #fff;
     font-size: 1.7rem;
     line-height: 3rem;
-    max-width: 290px;
+    max-width: 29rem;
     margin-bottom: 3rem;
   }
 
   &__link {
     display: inline-block;
     width: 100%;
-    max-width: 290px;
-    height: 54px;
-    border: 2px solid #f7901e;
-    border-radius: 27px;
+    max-width: 29rem;
+    height: 5.4rem;
+    border: .2rem solid #f7901e;
+    border-radius: 2.7rem;
     font-size: 1.8rem;
     font-weight: 400;
-    line-height: 50px;
+    line-height: 5rem;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -86,7 +86,7 @@
   top: 0;
   overflow: hidden;
   img {
-    width: 900px;
+    width: 90rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -96,7 +96,7 @@
     }
 
     @media (min-width: 1400px) {
-      width: 1200px;
+      width: 120rem;
     }
   }
 }

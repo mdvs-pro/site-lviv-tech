@@ -290,3 +290,13 @@ ul {
 .js-ic-a__icon {
 	transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 0.699304vw;
+  }
+
+	.container {
+		width: 110rem;
+	}
+}
