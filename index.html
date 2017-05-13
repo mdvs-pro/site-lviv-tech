@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendor.css">
+    <!-- build:css assets/vendor.css-->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -137,10 +141,14 @@
                 <a class="video__launch modal__link" href="#" data-url="https://www.youtube.com/watch?v=aQn5wiDyUHo?autoplay=1&cc_load_policy=1"><img class="video__icon" src="./assets/images/play_video.svg" alt="play">Переглянути відео</a>
               </div>
     
-              Lorem Ipsum - це текст-"риба", що використовується в друкарстві та дизайні.
-              Lorem Ipsum є, фактично, стандартною "рибою" аж з XVI сторіччя, коли невідомий
-              друкар взяв шрифтову гранку та склав на ній підбірку зразків шрифтів. "Риба" не тільки
-              успішно пережила п'ять століть, але й прижилася в електронному верстуванні, залишаючись по суті незмінною.
+              <div class="row">
+                <div class="col-md-6">
+                  Надсучасне та комфортне місто у місті, що функціонує в екосистемі «Живи – Працюй – Навчайся – Віпочивай» інфраструктура якого відрізняється не тільки функціональністю та естетикою, але й якістю будівництва та сучасними технологіями енергоефективності.
+                </div>
+                <div class="col-md-6">
+                  А головне — середовище однодумців, комфортний простір та спеціальні сервіси, що дозволяють компаніям-резидентам повністю зосередитися на роботі та зростати
+                </div>
+              </div>
     
             </div>
           </div>
@@ -251,7 +259,13 @@
 
 <div class="loader-overlay"></div>
 
-<script src="assets/scripts.js"></script>
+<!-- build:js assets/scripts.js-->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 <script src="assets/js/libs/modernizr.js"></script>
