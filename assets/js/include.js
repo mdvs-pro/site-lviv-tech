@@ -67,6 +67,8 @@
 		}
 	}
 
+	var globalController = new ScrollMagic.Controller();
+
 	var LvivTechnology = {
 		Init: function() {
 			this.PageLoad();
@@ -77,7 +79,7 @@
 			this.AnimateIcons();
 			this.VideoText();
 			this.StickyNav();
-			this.AnimateCanvas();
+			// this.AnimateCanvas();
 			this.SmoothScrolling();
 			this.SelectCustom();
 		},
@@ -85,19 +87,18 @@
 			var tl = new TimelineMax();
 
 			tl
-				.to('#image-container #layer-3', 1, {opacity: 1})
-				.to('#image-container #layer-2', 1, {opacity: 1});
-
-			var controller = new ScrollMagic.Controller();
+				.to('#image-container #layer-2', 1, {opacity: 1})
+				.to('#image-container #layer-3', 1, {opacity: 1});
 
 			var pinIntroScene = new ScrollMagic.Scene({
 				triggerElement: '#pin-container',
 				triggerHook: 0,
-				duration: 1.5 * $(window).height()
+				// duration: 1.5 * $(window).height()
+				duration: '100%'
 			})
 			.setPin('#pin-container')
 			.setTween(tl)
-			.addTo(controller);
+			.addTo(globalController);
 		},
 		SelectCustom: function() {
 			$('select').selectize();
@@ -110,7 +111,6 @@
 			});
 
 			function createCanvas(canvas) {
-
 
 				var ctx = canvas.getContext('2d');
 				var shapes = [];
@@ -229,7 +229,6 @@
 			}
 		},
 		AnimateTitles: function() {
-			var controller = new ScrollMagic.Controller();
 			var titles = $('.sc__title');
 
 			titles.each(function() {
@@ -237,14 +236,14 @@
 				tl.fromTo(this, 0.5, {x: -300, opacity: 0}, {x: 0, opacity: 1});
 
 				var scene = new ScrollMagic.Scene({
-					triggerElement: this
+					triggerElement: this,
+					triggerHook: 0.3
 				})
 				.setTween(tl)
-				.addTo(controller);
+				.addTo(globalController);
 			});
 		},
 		VideoText: function() {
-			var controller = new ScrollMagic.Controller();
 			var vt = $('.video__text');
 
 			vt.each(function() {
@@ -257,7 +256,7 @@
 					offset: -200
 				})
 				.setTween(tl)
-				.addTo(controller);
+				.addTo(globalController);
 			});
 		},
 		PageLoad: function() {
@@ -345,8 +344,8 @@
 		},
 		AnimateIcons: function() {
 		if (!Modernizr.touchevents) {
-				var a = new ScrollMagic.Controller,
-						b = new TimelineMax;
+				var b = new TimelineMax;
+
 				b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
 						marginLeft: "-41.5%",
 						marginTop: "34%",
@@ -367,7 +366,7 @@
 				new ScrollMagic.Scene({
 						triggerElement: ".js-ic-a",
 						duration: 400
-				}).setTween(b).addTo(a)
+				}).setTween(b).addTo(globalController)
 			}
 		},
 		SmoothScrolling: function() {
@@ -379,7 +378,7 @@
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top
 				}, 1500);
-				
+
 			});
 		}
 	}
@@ -391,7 +390,10 @@
 		modalBtn: '.modal__close',
 		activeClass: 'open',
 		init: function () {
-			$(document).on('click', this.linkClassName, function () {event.preventDefault();modalVideo.open($(this).data('url'));});
+			$(document).on('click', this.linkClassName, function () {
+				event.preventDefault();
+				modalVideo.open($(this).data('url'));
+			});
 			$(document).on('click', this.modalBtn, function () {modalVideo.close();});
 		},
 		open: function (data_url) {
