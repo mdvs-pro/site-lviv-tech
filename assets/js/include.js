@@ -85,8 +85,8 @@
 			var tl = new TimelineMax();
 
 			tl
-				.to('#image-container #layer-3', 1, {opacity: 1})
-				.to('#image-container #layer-2', 1, {opacity: 1});
+				.to('#image-container #layer-2', 1, {opacity: 1})
+				.to('#image-container #layer-3', 1, {opacity: 1});
 
 			var controller = new ScrollMagic.Controller();
 
@@ -110,7 +110,6 @@
 			});
 
 			function createCanvas(canvas) {
-
 
 				var ctx = canvas.getContext('2d');
 				var shapes = [];
@@ -237,7 +236,8 @@
 				tl.fromTo(this, 0.5, {x: -300, opacity: 0}, {x: 0, opacity: 1});
 
 				var scene = new ScrollMagic.Scene({
-					triggerElement: this
+					triggerElement: this,
+					triggerHook: 0.3
 				})
 				.setTween(tl)
 				.addTo(controller);
@@ -379,7 +379,7 @@
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top
 				}, 1500);
-				
+
 			});
 		}
 	}
