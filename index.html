@@ -8,11 +8,7 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
-    <!-- build:css assets/vendor.css-->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+    <link rel="stylesheet" href="assets/vendor.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,10 +23,10 @@
       <div class="header__nav js_mobile-nav">
         <nav role="navigation">
           <ul class="header__menu menu">
-            <li><a href="/about.html" class="menu__link active">Про нас</a></li>
-            <li><a href="/infrostructure.html" class="menu__link">Інфраструктура</a></li>
-            <li><a href="/residents.html" class="menu__link">Резидентам</a></li>
-            <li><a href="/contacts.html" class="menu__link">Контакти</a></li>
+            <li><a href="/" class="js-link menu__link active">Про нас</a></li>
+            <li><a href="#videosc" class="menu__link page-scroll">Інфраструктура</a></li>
+            <li><a href="#residents" class="menu__link page-scroll">Резидентам</a></li>
+            <li><a href="/contacts.html" class="js-link menu__link">Контакти</a></li>
           </ul>
         </nav>
 
@@ -169,24 +165,28 @@
               <h3 class="heading">Як стати резидентом?</h3>
             </div>
             <p class="about__text">Надсучасне та комфортне  місто у місті, інфраструктура якого відрізняється не тільки функціональністю та естетикою, але й якістю будівництва та сучасними технологіями енергоефективності</p>
+            <a class="about__more js-link" href="./residents.html">Детальніше...</a>
           </div>
           <div class="column col-md-3">
             <div class="sc__header">
               <h3 class="heading">Що дає статус резидента?</h3>
             </div>
             <p class="about__text">Спільнота, що об’єднує провідні технологічні та інноваційні компанії,  R&D центри, інкубатори і акселератори, активно розвиаваючихся підприємців та молоді стартапи, які, інтегруючись, створюють кластер інновацій, спільну екосистему</p>
+            <a class="about__more js-link" href="./residents.html">Детальніше...</a>
           </div>
           <div class="column col-md-3">
             <div class="sc__header">
               <h3 class="heading">Подати заявку</h3>
             </div>
             <p class="about__text">Ми прагнемо побудувати таку систему, яка буде сприяти постійній взаємодії та комунікації між резидентами містечка задля досягнення синергії, яка буде давати свій позитивний ефект як для всієї спільноти, так і для кожного підприємця окремо</p>
+            <a class="about__more js-link" href="./residents.html">Детальніше...</a>
           </div>
           <div class="column col-md-3">
             <div class="sc__header">
               <h3 class="heading">На мапі</h3>
             </div>
             <p class="about__text">Завдяки синергії горизонт можливостей не має меж та кордонів. Доступ до знань та технологій, взаємодія з однодумцями, консультаційна підтримка та багато інших можливостей пропонує LvivTech.City</p>
+            <a class="about__more js-link" href="./residents.html">Детальніше...</a>
           </div>
         </div>
     
@@ -261,13 +261,7 @@
 
 <div class="loader-overlay"></div>
 
-<!-- build:js assets/scripts.js-->
-<!-- bower:js -->
-<script src="../../bower_components/jquery/dist/jquery.js"></script>
-<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
-<!-- endbower -->
-
-<!-- endbuild -->
+<script src="assets/scripts.js"></script>
 <script src="assets/js/libs/TweenMax.min.js"></script>
 <script src="assets/js/libs/ScrollMagic.min.js"></script>
 <script src="assets/js/libs/modernizr.js"></script>

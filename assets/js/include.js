@@ -294,7 +294,7 @@
 			})
 		},
 		NavTransition: function() {
-			$(".menu__link, .header__logo").on("click", function(e) {
+			$(".js-link, .header__logo").on("click", function(e) {
 				e.preventDefault();
 
 				var href = $(this).attr("href");
