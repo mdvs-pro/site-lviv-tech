@@ -8,7 +8,11 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendor.css">
+    <!-- build:css assets/vendor.css-->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/sweetalert/dist/sweetalert.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -257,7 +261,13 @@
 
 <div class="loader-overlay"></div>
 
-<script src="assets/scripts.js"></script>
+<!-- build:js assets/scripts.js-->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
 <script src="assets/js/libs/TweenMax.min.js"></script>
 <script src="assets/js/libs/ScrollMagic.min.js"></script>
 <script src="assets/js/libs/modernizr.js"></script>

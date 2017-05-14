@@ -61,8 +61,9 @@
 					forms[i].addEventListener('submit', _self.initActions);
 			}
 		},
-		initActions: function(){
-			event.preventDefault();
+		initActions: function(e){
+			console.log(e);
+			e.preventDefault();
 			swal("Спасибо!", "Ваша заявка успешно отправлена - мы свяжемся с вами в ближайшее время!", "success");
 		}
 	}
@@ -370,8 +371,8 @@
 			}
 		},
 		SmoothScrolling: function() {
-			$(document).on('click touchstart', 'a.page-scroll', function (event) {
-				event.preventDefault();
+			$(document).on('click touchstart', 'a.page-scroll', function (e) {
+				e.preventDefault();
 				$('.js_mobile-nav').removeClass('open');
 
 				var $anchor = $(this);
@@ -390,8 +391,8 @@
 		modalBtn: '.modal__close',
 		activeClass: 'open',
 		init: function () {
-			$(document).on('click', this.linkClassName, function () {
-				event.preventDefault();
+			$(document).on('click', this.linkClassName, function (e) {
+				e.preventDefault();
 				modalVideo.open($(this).data('url'));
 			});
 			$(document).on('click', this.modalBtn, function () {modalVideo.close();});
