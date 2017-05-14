@@ -36,6 +36,7 @@
 
   &__burger {
     display: none;
+    margin-left: 5rem;
   }
 
   &__nav {
@@ -105,5 +106,16 @@
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
+  }
+}
+
+@media (max-width: 899px) {
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__menu, .header__soc {
+    display: none;
   }
 }
