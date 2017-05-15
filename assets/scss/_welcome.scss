@@ -1,6 +1,6 @@
 .welcome {
   background: #000;
-  padding-top: 380px;
+  padding-top: 38rem;
   padding-bottom: 0;
   overflow: hidden;
 
@@ -9,16 +9,16 @@
   }
 
   @media (min-width: 400px) {
-    padding-top: 200px;
-    min-height: 1100px;
+    padding-top: 20rem;
+    min-height: 110rem;
   }
 
   @media (min-width: 1400px) {
-    min-height: 1340px;
+    min-height: 134rem;
   }
 
   &__sub-slogan {
-    font-size: 55px;
+    font-size: 5.5rem;
     line-height: 1;
     font-weight: 400;
     color: #fff;
@@ -48,11 +48,11 @@
   }
 
   &__slogan {
-    font-size: 65px;
+    font-size: 6.5rem;
     line-height: 1;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
     span {
       color: #f7901e;
       font-weight: 400;
@@ -65,9 +65,9 @@
 
   &__p {
     color: #fff;
-    font-size: 20px;
-    line-height: 26px;
-    max-width: 295px;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    max-width: 29.5rem;
   }
 
   &__link {
@@ -94,8 +94,8 @@
 }
 
 .image-container {
-  width: 1200px;
-  height: 800px;
+  width: 120rem;
+  height: 80rem;
   position: absolute;
   right: 0;
   top: 0;
@@ -109,10 +109,6 @@
     &#layer-2,
     &#layer-3 {
       opacity: 0;
-    }
-
-    @media (min-width: 1400px) {
-      width: 120rem;
     }
   }
 }
