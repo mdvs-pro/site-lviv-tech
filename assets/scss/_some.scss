@@ -285,8 +285,21 @@ ul {
 		}
 
 		@media (max-width: 767px) {
-			.column {
-				margin-top: 10rem!important;
+			
+			.column:nth-child(1) {
+				margin-top: 20rem;
+			}
+
+			.column:nth-child(2) {
+				margin-top: 15rem;
+			}
+
+			.column:nth-child(3) {
+				margin-top: 20rem;
+			}
+
+			.column:nth-child(4) {
+				margin-top: 15rem;
 			}
 		}
 	}
