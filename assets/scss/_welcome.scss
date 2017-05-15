@@ -4,7 +4,12 @@
   padding-bottom: 0;
   overflow: hidden;
 
+  @media (max-width: 500px) {
+    padding-top: 200px;
+  }
+
   @media (min-width: 400px) {
+    padding-top: 200px;
     min-height: 1100px;
   }
 

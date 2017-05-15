@@ -238,7 +238,8 @@
 
 				var scene = new ScrollMagic.Scene({
 					triggerElement: this,
-					triggerHook: 0.3
+					triggerHook: 0.3,
+					offset: -200
 				})
 				.setTween(tl)
 				.addTo(globalController);
