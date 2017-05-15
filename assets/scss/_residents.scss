@@ -6,3 +6,23 @@
 
   margin-top: -25rem;
 }
+
+.r-residents {
+  background: transparent;
+
+  .back {
+    background: #f8f8f8;
+  }
+
+  .sc__title {
+    color: $primary_color;
+  }
+
+  .form__gr label {
+    background: #f8f8f8;
+  }
+
+  .form__inp, .form__tarea, .form .selectize-input {
+    background: #f8f8f8;
+  }
+}

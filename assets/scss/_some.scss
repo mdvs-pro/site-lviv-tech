@@ -231,6 +231,10 @@ ul {
 		width: 100%;
 		z-index: 100;
 
+		&--nmt {
+			margin-top: 10rem;
+		}
+
 		.back {
 			position: absolute;
 			top: 0;
@@ -258,6 +262,10 @@ ul {
 
 		.heading {
 			padding-bottom: 0;
+		}
+
+		.column-t {
+			margin-top: 20rem;
 		}
 
 		.column:nth-child(1) {
