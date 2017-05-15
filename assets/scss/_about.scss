@@ -4,7 +4,7 @@
   .ic-mobile {
     display: none;
   }
-  
+
   &:after {
     content: '';
     position: absolute;
@@ -16,8 +16,8 @@
   }
 
   &__text {
-    font-size: 1.7rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
     font-weight: 100;
   }
 

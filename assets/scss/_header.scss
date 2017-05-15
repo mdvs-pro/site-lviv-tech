@@ -2,7 +2,7 @@
   width: 100%;
   position: fixed;
   background: transparent;
-  padding: 20px 0;
+  padding: 2rem 0;
   z-index: 10;
   transform: translateY(0);
   transition: all 1.2s cubic-bezier(.55,.085,0,.99);
@@ -24,12 +24,12 @@
     justify-content: space-between;
     align-items: center;
     margin-left: auto;
-    height: 34px;
+    height: 3.4rem;
   }
 
   &__logo {
     display: inline-block;
-    width: 217px;
+    width: 21.7rem;
     font-size: 0;
     margin-top: 8px;
   }
@@ -50,27 +50,27 @@
     line-height: 1;
     &-link {
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: 2.4rem;
+      height: 2.4rem;
       margin-left: 2rem;
       border-radius: 50%;
-      border: 1px solid #fff;
+      border: .1rem solid #fff;
       overflow: hidden;
       &:first-child {
         margin-left: 0;
       }
       img {
-        width: 26px;
+        width: 2.6rem;
         max-width: none;
-        height: 26px;
-        margin-top: -2px;
-        margin-left: -2px;
+        height: 2.6rem;
+        margin-top: -.2rem;
+        margin-left: -.2rem;
       }
     }
   }
 
   &__menu li {
-    padding-left: 40px;
+    padding-left: 4.0rem;
     line-height: 1;
     font-size: 0;
   }
@@ -81,7 +81,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   &__link {
-    font-size: 16px;
+    font-size: 1.6rem;
     position: relative;
     color: $color_white;
     text-decoration: none;

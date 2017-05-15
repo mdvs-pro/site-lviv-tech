@@ -237,12 +237,12 @@
 
 			titles.each(function() {
 				var tl = new TimelineMax();
-				tl.fromTo(this, 0.5, {x: -300, opacity: 0}, {x: 0, opacity: 1});
+				tl.fromTo(this, 0.5, {x: -500, opacity: 0}, {x: 0, opacity: 1});
 
 				var scene = new ScrollMagic.Scene({
 					triggerElement: this,
 					triggerHook: 0.3,
-					offset: -200
+					offset: -500
 				})
 				.setTween(tl)
 				.addTo(globalController);
@@ -352,20 +352,20 @@
 				var b = new TimelineMax;
 
 				b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
-						marginLeft: "-41.5%",
-						marginTop: "34%",
+						marginLeft: "-49%",
+						marginTop: "42%",
 						rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--rhomb", 1, {
-						marginLeft: "-15.5%",
-						marginTop: "25%",
+						marginLeft: "-23.5%",
+						marginTop: "32%",
 						rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--star", 1, {
-						marginLeft: "9%",
-						marginTop: "16%",
+						marginLeft: "1%",
+						marginTop: "22%",
 						rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--stop", 1, {
-						marginLeft: "34%",
-						marginTop: "7%",
+						marginLeft: "26%",
+						marginTop: "13%",
 						rotation: 360
 				})]);
 				new ScrollMagic.Scene({

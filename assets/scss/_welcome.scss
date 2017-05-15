@@ -9,12 +9,11 @@
   }
 
   @media (min-width: 400px) {
-    padding-top: 20rem;
     min-height: 110rem;
   }
 
   @media (min-width: 1400px) {
-    min-height: 134rem;
+    min-height: 117rem;
   }
 
   &__sub-slogan {
@@ -31,18 +30,18 @@
 
   &__icon {
     position: relative;
-    width: 60px;
-    height: 60px;
-    margin: 90px auto 0;
+    width: 6rem;
+    height: 6rem;
+    margin: 5rem auto 0;
 
     &:after {
       content: '';
       position: absolute;
       background: $color_white;
-      top: 100px;
+      top: 10rem;
       left: 50%;
       margin-left: -1px;
-      width: 2px;
+      width: .2rem;
       height: 80rem;
     }
   }
@@ -109,6 +108,10 @@
     &#layer-2,
     &#layer-3 {
       opacity: 0;
+    }
+
+    @media (min-width: 1400px) {
+      width: 111rem;
     }
   }
 }
