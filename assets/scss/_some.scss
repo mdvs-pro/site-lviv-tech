@@ -283,6 +283,12 @@ ul {
 		.column:nth-child(4) {
 			margin-top: 16rem;
 		}
+
+		@media (max-width: 767px) {
+			.column {
+				margin-top: 10rem!important;
+			}
+		}
 	}
 }
 
@@ -307,4 +313,10 @@ ul {
 	.container {
 		width: 110rem;
 	}
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 9px;
+  }
 }

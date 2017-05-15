@@ -77,7 +77,7 @@
 			this.Scroll();
 			this.AnimateSlogan();
 			this.AnimateTitles();
-			this.AnimateIcons();
+			if (window.innerWidth > 767) this.AnimateIcons();
 			this.VideoText();
 			this.StickyNav();
 			// this.AnimateCanvas();

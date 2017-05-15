@@ -1,6 +1,11 @@
 .about {
   background: rgba(0,0,0,0);
 
+  @media (max-width: 767px) {
+    .sc__title {
+      padding-top: 10rem;
+    }
+  }
 
   &:after {
     content: '';

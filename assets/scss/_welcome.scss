@@ -4,8 +4,8 @@
   padding-bottom: 0;
   overflow: hidden;
 
-  @media (min-width: 500px) {
-    min-height: 110rem;
+  @media (min-width: 400px) {
+    min-height: 1100px;
   }
 
   @media (min-width: 1400px) {
@@ -18,6 +18,10 @@
     font-weight: 400;
     color: #fff;
     margin-bottom: 0;
+
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
   }
 
   &__icon {
@@ -47,6 +51,10 @@
     span {
       color: #f7901e;
       font-weight: 400;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 32px;
     }
   }
 
