@@ -5,16 +5,36 @@
   margin-top: -35rem;
   transform: translateY(5rem);
 
+  @include media-breakpoint-down(sm) {
+    margin-top: -40rem;    
+  }
+
+  @media(max-width: 500px) {
+    height: 140rem;
+  }
+
+  @media(max-width: 400px) {
+      height: 160rem;
+    }
+
   .sc__title {
     color: $primary_color;
+
+    @include media-breakpoint-down(sm) {
+      transform: translateY(4rem);
+    }
   }
 
   &__content {
     height: 100%;
     padding-top: 30rem;
 
-    @media(max-width: 600px) {
+    @include media-breakpoint-down(sm) {
       padding-top: 40rem;
+    }
+
+    @media(max-width: 400px) {
+      padding-top: 50rem;
     }
   }
 
@@ -38,6 +58,10 @@
       left: -100%;
       transform: rotate(-25deg);
       z-index: 0;
+
+      @include media-breakpoint-down(sm) {
+        top: -50%;
+      }
     }
   }
 
@@ -47,8 +71,14 @@
     line-height: 2.3rem;
     font-weight: 100;
 
-    @media(max-width: 600px) {
+    @include media-breakpoint-down(sm) {
       padding-bottom: 8rem;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media(max-width: 500px) {
+      padding-bottom: 4rem;
     }
   }
 
@@ -57,16 +87,15 @@
     display: block;
     padding-bottom: 2rem;
     transform: translateY(-120%);
-
     width: 100%;
-    max-width: 295px;
-    height: 54px;
+    max-width: 29.5rem;
+    height: 5.4rem;
     margin: 0 auto;
-    border: 2px solid $secondary_color;
-    border-radius: 27px;
-    font-size: 18px;
+    border: .2rem solid $secondary_color;
+    border-radius: 2.7rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 5rem;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -77,6 +106,13 @@
     &:active {
       background-color: $secondary_color;
     }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+      max-width: 21rem;
+      height: 4.4rem;
+      line-height: 4rem;
+    }    
   }
 
   &__icon {
@@ -87,5 +123,9 @@
     transform: translateY(-120%);
     width: 10rem;
     margin: auto;
+
+    @include media-breakpoint-down(sm) {
+      width: 7.4rem;
+    }
   }
 }

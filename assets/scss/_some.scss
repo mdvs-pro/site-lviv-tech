@@ -134,6 +134,13 @@ h4, .h4 {
 	text-transform: uppercase;
 }
 
+@include media-breakpoint-down(md) {
+
+	h3, .h3 {
+		font-size: 2.4rem;
+	}
+}
+
 input[type=email],
 input[type=password],
 input[type=submit],
@@ -244,6 +251,11 @@ ul {
 			height: 100%;
 			z-index: 0;
 			transform: rotate(-25deg);
+
+			@media(max-width: 400px) {
+				left: -125%;
+				width: 350%;
+			}
 		}
 
 		.anim-canvas {
@@ -282,6 +294,25 @@ ul {
 
 		.column:nth-child(4) {
 			margin-top: 16rem;
+		}
+
+		@include media-breakpoint-down(md) {
+
+			.column:nth-child(1) {
+				margin-top: 49rem;
+			}
+
+			.column:nth-child(2) {
+				margin-top: 37rem;
+			}
+
+			.column:nth-child(3) {
+				margin-top: 25rem;
+			}
+
+			.column:nth-child(4) {
+				margin-top: 13rem;
+			}
 		}
 
 		@media (max-width: 767px) {

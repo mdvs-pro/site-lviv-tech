@@ -97,8 +97,8 @@
 			var pinIntroScene = new ScrollMagic.Scene({
 				triggerElement: '#pin-container',
 				triggerHook: 0,
-				// duration: 1.5 * $(window).height()
-				duration: '100%'
+				duration: 1 * $(window).height()
+				// duration: '100%'
 			})
 			.setPin('#pin-container')
 			.setTween(tl)
@@ -352,21 +352,21 @@
 				var b = new TimelineMax;
 
 				b.add([TweenMax.to(".js-ic-a__icon--circle", 1, {
-						marginLeft: "-49%",
-						marginTop: "42%",
-						rotation: 360
+								marginLeft: "-49%",
+								marginTop: "42%",
+								rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--rhomb", 1, {
-						marginLeft: "-23.5%",
-						marginTop: "32%",
-						rotation: 360
+								marginLeft: "-23.5%",
+								marginTop: "31%",
+								rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--star", 1, {
-						marginLeft: "1%",
-						marginTop: "22%",
-						rotation: 360
+								marginLeft: "1%",
+								marginTop: "20%",
+								rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--stop", 1, {
-						marginLeft: "26%",
-						marginTop: "11%",
-						rotation: 360
+								marginLeft: "26%",
+								marginTop: "9%",
+								rotation: 360
 				})]);
 				new ScrollMagic.Scene({
 						triggerElement: ".js-ic-a",

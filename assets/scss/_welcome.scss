@@ -8,8 +8,13 @@
     padding-top: 200px;
   }
 
+
   @media (min-width: 400px) {
     min-height: 110rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    min-height: 90rem;
   }
 
   @media (min-width: 1400px) {
@@ -17,7 +22,7 @@
   }
 
   &__sub-slogan {
-    font-size: 5.5rem;
+    font-size: 5.4rem;
     line-height: 1;
     font-weight: 400;
     color: #fff;
@@ -25,6 +30,10 @@
 
     @media (max-width: 600px) {
       font-size: 30px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 3rem;
     }
   }
 
@@ -47,7 +56,7 @@
   }
 
   &__slogan {
-    font-size: 6.5rem;
+    font-size: 6rem;
     line-height: 1;
     font-weight: 700;
     color: #fff;
@@ -60,6 +69,10 @@
     @media (max-width: 600px) {
       font-size: 32px;
     }
+
+    @include media-breakpoint-down(md) {
+      font-size: 4rem;
+    }
   }
 
   &__p {
@@ -67,6 +80,10 @@
     font-size: 2rem;
     line-height: 2.6rem;
     max-width: 29.5rem;
+
+    @include media-breakpoint-down(md) {
+      font-size: 1.8rem;
+    }
   }
 
   &__link {
