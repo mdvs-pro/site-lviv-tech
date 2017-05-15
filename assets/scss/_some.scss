@@ -213,6 +213,11 @@ ul {
 		font-weight: 700;
 		color: #fff;
 		text-align: right;
+
+		@include media-breakpoint-down(sm) {
+      max-width: 30rem;
+      margin-left: auto;
+    }
 	}
 
 	&__header {
@@ -276,9 +281,28 @@ ul {
 			padding-bottom: 0;
 		}
 
-		.column-t {
-			margin-top: 20rem;
+		.column-t:nth-child(1) {
+			margin-top: 19rem;
 		}
+
+		.column-t:nth-child(2) {
+			margin-top: 8rem;
+		}
+
+		@include media-breakpoint-down(xs) {
+			.column-t:nth-child(1) {
+				margin-top: 2rem;
+			}
+
+			.column-t:nth-child(2) {
+				margin-top: 2rem;
+			}
+		}
+
+		.column-ts {
+			margin-top: 6rem;
+		}
+
 
 		.column:nth-child(1) {
 			margin-top: 52rem;
