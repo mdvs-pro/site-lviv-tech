@@ -365,7 +365,7 @@
 						rotation: 360
 				}), TweenMax.to(".js-ic-a__icon--stop", 1, {
 						marginLeft: "26%",
-						marginTop: "13%",
+						marginTop: "11%",
 						rotation: 360
 				})]);
 				new ScrollMagic.Scene({

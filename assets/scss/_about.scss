@@ -22,7 +22,8 @@
   }
 
   &__more {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
 
@@ -46,7 +47,7 @@
 
 @media (max-width:767px) {
   
-  .ic-mobile {
+  .about .ic-mobile {
     display: inline-block;
     width: 7rem;
     position: relative;
