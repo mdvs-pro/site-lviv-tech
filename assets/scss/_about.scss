@@ -58,23 +58,12 @@
 			margin-top: 15rem!important;
 		}
 
-  .js-ic-a__icon--circle {
-    margin-left: -47.5%;
-    margin-top: 25%;			
+  .ic-mobile {
+    display: inline-block;
+    width: 7rem;
+    position: relative;
+    top: -2rem;
   }
 
-  .js-ic-a__icon--rhomb {
-    margin-left: 2.5%;
-    margin-top: 17%;			
-  }
-
-  .js-ic-a__icon--star {
-    margin-left: -47.5%;
-    margin-top: 96%;			
-  }
-
-  .js-ic-a__icon--stop {
-    margin-left: 2.5%;
-    margin-top: 88%;			
-  }
+  .icon-animate {display: none;}
 }
