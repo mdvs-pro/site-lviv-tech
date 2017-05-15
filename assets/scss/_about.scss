@@ -1,6 +1,10 @@
 .about {
   background: rgba(0,0,0,0);
 
+  .ic-mobile {
+    display: none;
+  }
+  
   &:after {
     content: '';
     position: absolute;
