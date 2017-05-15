@@ -18,7 +18,7 @@ var options = {
 };
 
 gulp.task('build', function() {
-	return gulp.src('index.html')
+	return gulp.src('*.html')
 		.pipe(wiredep({
       directory: "./bower_components/"
     }))
