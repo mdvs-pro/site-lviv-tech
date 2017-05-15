@@ -279,6 +279,12 @@
 					c = $(document),
 					d = $(window),
 					e = $(".js-navbar");
+					
+					if ($(window).scrollTop() > 700) {
+						e.addClass("show-bg");
+					} else {
+						e.removeClass("show-bg");
+					}
 
 			a = Modernizr.touch ? 150 : 25, d.scroll(function() {
 					var f = $(this).scrollTop();
