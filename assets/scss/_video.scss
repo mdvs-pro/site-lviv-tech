@@ -18,7 +18,7 @@
     }
 
   .sc__title {
-    color: $primary_color;
+    color: #111;
 
     @include media-breakpoint-down(sm) {
       transform: translateY(4rem);
@@ -51,13 +51,13 @@
     &:before {
       content: '';
       position: absolute;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0, 0, 0, 0.7);
       height: 300%;
       width: 350%;
-      top: -80%;
+      top: -60%;
       left: -100%;
       transform: rotate(-25deg);
-      z-index: 0;
+      z-index: 0; 
 
       @include media-breakpoint-down(sm) {
         top: -50%;

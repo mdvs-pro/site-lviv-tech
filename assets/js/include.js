@@ -62,11 +62,76 @@
 			}
 		},
 		initActions: function(e){
-			console.log(e);
 			e.preventDefault();
-			swal("Спасибо!", "Ваша заявка успешно отправлена - мы свяжемся с вами в ближайшее время!", "success");
+			var form = e.target;
+
+
+			if (madValidation.validForm(form)) {
+				var data = $(form).serialize();
+				var pathAction = $(form).attr('action');
+				$.ajax({
+					url: pathAction,
+					data: data,
+					type: 'POST',
+					success: function (dataofconfirm) {
+						swal("Спасибо!", "Ваша заявка успешно отправлена - мы свяжемся с вами в ближайшее время!", "success");
+						$(form).find('input:not([type="submit"])').each(function(){
+							// $(this).removeClass('form__input--error');
+							$(this).val('');
+						})
+					}
+				});
+			}
+		},
+		validForm: function(form) {
+			var userData = {
+				user_name: $(form).find('#user_name').val(),
+				user_email: $(form).find('#user_mail').val(),
+				user_tel: $(form).find('#user_tel').val(),
+				user_work: $(form).find('#user_work').val()
+			}
+
+			var validator = new LIVR.Validator({
+					user_name: 'required',
+					user_email: [ 'required', 'email' ],
+					user_tel: [ 'required', 'integer', { 'max_length': 15 }, { 'min_length': 10 } ],
+					user_work: 'required'
+			});
+
+			var translateData = {
+				user_name: "Ім'я",
+				user_email: "Пошта",
+				user_tel: "Телефон",
+				user_work: "Cфера діяльності",
+				REQUIRED: "Обов'язкове для заповнення",
+				TOO_SHORT: "Надто короткий телефон",
+				TOO_LONG: "Надто довгий телефон",
+				NOT_INTEGER: "Допустимі тільки цифри"
+			}
+
+			var validData = validator.validate(userData);
+
+			if (validData) {
+					return true;
+			} else {
+					var errors = validator.getErrors();
+					var errorText = '';
+					for (var prop in errors) {
+						if( errors.hasOwnProperty( prop ) ) {
+							errorText += 'Поле ' + translateData[prop] + " - " + translateData[errors[prop]] + "\n";
+						} 
+					};
+					swal(
+						'Форма заповнена із помилками!',
+						errorText,
+						'error'
+					);
+			}
+
 		}
 	}
+
+
 
 	var globalController = new ScrollMagic.Controller();
 
@@ -76,6 +141,8 @@
 			this.NavTransition();
 			this.Scroll();
 			this.AnimateSlogan();
+			this.ScrollOnLoad();
+			this.ScrollOnTop();
 
 			if (window.innerWidth > 767) {
 				// this.AnimateIcons();
@@ -86,6 +153,32 @@
 			// this.AnimateCanvas();
 			this.SmoothScrolling();
 			this.SelectCustom();
+		},
+		ScrollOnTop: function(){
+			$(window).on('scroll', function () {
+					if ($(this).scrollTop() > 300) {
+							$('#scroller').fadeIn();
+					} else {
+							$('#scroller').fadeOut();
+					}
+			});
+			$('#scroller').on('click', function () {
+					$('body,html').stop().animate({
+							scrollTop: 0
+					}, 1500);
+					return false;
+			});
+		},
+		ScrollOnLoad: function() {
+			if (location.search) {
+				var locS = location.search;
+				locS = '#' + locS.substring(1);
+
+				var $anchor = $(locS);
+				$('html, body').stop().animate({
+					scrollTop: $anchor.offset().top
+				}, 1500);
+			}
 		},
 		Scroll: function() {
 			var tl = new TimelineMax();
@@ -279,7 +372,7 @@
 					c = $(document),
 					d = $(window),
 					e = $(".js-navbar");
-					
+
 					if ($(window).scrollTop() > 700) {
 						e.addClass("show-bg");
 					} else {

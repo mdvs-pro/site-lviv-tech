@@ -5,8 +5,8 @@ html {
 }
 
 html ::selection {
-    color: #050505;
-    background: #00ff7c
+	color: #050505;
+	background: #00ff7c
 }
 
 body {
@@ -51,13 +51,13 @@ body {
 		width: 200%;
 		height: 0;
 		background-color: #fff;
-    overflow: hidden;
+		overflow: hidden;
 		position: fixed;
 		left: 50%;
 		top: 50%;
 		z-index: 900;
-    transform: translate(-50%,-50%) rotate(-25deg);
-    transition: height .9s cubic-bezier(.55,.085,0,.99);
+		transform: translate(-50%, -50%) rotate(-25deg);
+		transition: height .9s cubic-bezier(.55, .085, 0, .99);
 	}
 	&::after {
 		content: '';
@@ -76,7 +76,7 @@ body {
 		z-index: 901;
 		opacity: 0;
 		transform: translate(-50%, -50%);
-		transition: opacity .9s cubic-bezier(.55,.085,0,.99);
+		transition: opacity .9s cubic-bezier(.55, .085, 0, .99);
 	}
 }
 
@@ -85,13 +85,11 @@ body {
 }
 
 .container {
-
 	&--full {
 		position: relative;
 		height: 100%;
 	}
 }
-
 
 .container-wrap {
 	width: 100%;
@@ -100,7 +98,8 @@ body {
 	margin: 0 auto;
 }
 
-h1, .h1 {
+h1,
+.h1 {
 	font-family: $secondary_font;
 	font-weight: 600;
 	font-size: 4rem;
@@ -108,7 +107,8 @@ h1, .h1 {
 	color: $primary_color;
 }
 
-h2, .h2 {
+h2,
+.h2 {
 	font-family: $secondary_font;
 	font-weight: 500;
 	font-size: 3rem;
@@ -117,7 +117,8 @@ h2, .h2 {
 	padding-bottom: 0.43rem;
 }
 
-h3, .h3 {
+h3,
+.h3 {
 	font-family: $secondary_font;
 	font-weight: 400;
 	font-size: 2.8rem;
@@ -126,7 +127,8 @@ h3, .h3 {
 	padding-bottom: 2rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
 	font-weight: 600;
 	font-size: 1.5rem;
 	line-height: 2rem;
@@ -135,8 +137,8 @@ h4, .h4 {
 }
 
 @include media-breakpoint-down(md) {
-
-	h3, .h3 {
+	h3,
+	.h3 {
 		font-size: 2.4rem;
 	}
 }
@@ -146,7 +148,7 @@ input[type=password],
 input[type=submit],
 input[type=text],
 textarea {
-    appearance: none;
+	appearance: none;
 }
 
 p {
@@ -154,11 +156,13 @@ p {
 }
 
 a {
-  color: $secondary_color;
-  text-decoration: underline;
+	color: $secondary_color;
+	text-decoration: underline;
 }
 
-strong, b, .strong {
+strong,
+b,
+.strong {
 	font-weight: 500;
 }
 
@@ -185,10 +189,9 @@ ul {
 	position: relative;
 	padding-left: 4rem;
 	padding-right: 4rem;
-
 	&--grid {
 		font-size: 0;
-		& > :not(&) {
+		&> :not(&) {
 			font-size: 1.6rem;
 		}
 	}
@@ -210,55 +213,45 @@ ul {
 	background: transparent;
 	position: relative;
 	padding: 4rem 0;
-
 	&__title {
 		font-size: 4rem;
 		line-height: 1;
 		font-weight: 700;
 		color: #fff;
 		text-align: right;
-
 		&--l {
 			text-align: left;
 		}
-
 		@include media-breakpoint-down(sm) {
-      max-width: 30rem;
-      margin-left: auto;
-    }
-
+			max-width: 30rem;
+			margin-left: auto;
+		}
 		&--title-static {
 			@extend .sc__title;
 		}
 	}
-
 	&__header {
 		font-size: 1.8rem;
 		font-weight: 100;
 		text-align: center;
 		margin-bottom: 3rem;
 	}
-
 	&--dark {
 		color: $color_white;
-
 		.heading {
 			color: $color_white;
 		}
 	}
-
 	&--scew {
 		position: relative;
 		padding-top: 2.5rem;
-  	padding-bottom: 9rem;
-  	margin-top: -20rem;
+		padding-bottom: 9rem;
+		margin-top: -20rem;
 		width: 100%;
 		z-index: 100;
-
 		&--nmt {
 			margin-top: 10rem;
 		}
-
 		.back {
 			position: absolute;
 			top: 0;
@@ -268,19 +261,16 @@ ul {
 			height: 100%;
 			z-index: 0;
 			transform: rotate(-25deg);
-
 			@media(max-width: 400px) {
 				left: -125%;
 				width: 350%;
 			}
 		}
-
 		.anim-canvas {
 			position: absolute;
 			top: 20%;
 			width: 932px;
 		}
-
 		.sc__header {
 			text-align: left;
 			margin-bottom: 0;
@@ -288,90 +278,68 @@ ul {
 			padding: 3rem 0;
 			border-top: 1px solid $color_gray;
 		}
-
 		.heading {
 			padding-bottom: 0;
 		}
-
 		.column-t:nth-child(1) {
 			margin-top: 19rem;
 		}
-
 		.column-t:nth-child(2) {
 			margin-top: 8rem;
 		}
-
 		@include media-breakpoint-down(xs) {
 			.column-t:nth-child(1) {
 				margin-top: 2rem;
 			}
-
 			.column-t:nth-child(2) {
 				margin-top: 2rem;
 			}
 		}
-
 		.column-ts {
 			margin-top: 6rem;
 		}
-
-
 		.column:nth-child(1) {
 			margin-top: 52rem;
 		}
-
 		.column:nth-child(2) {
 			margin-top: 40rem;
 		}
-
 		.column:nth-child(3) {
 			margin-top: 28rem;
 		}
-
 		.column:nth-child(4) {
 			margin-top: 16rem;
 		}
-
 		@include media-breakpoint-down(md) {
-
 			.column:nth-child(1) {
 				margin-top: 49rem;
 			}
-
 			.column:nth-child(2) {
 				margin-top: 37rem;
 			}
-
 			.column:nth-child(3) {
 				margin-top: 25rem;
 			}
-
 			.column:nth-child(4) {
 				margin-top: 13rem;
 			}
 		}
-
 		@media (max-width: 767px) {
-			
 			.column:nth-child(1) {
 				margin-top: 20rem;
 			}
-
 			.column:nth-child(2) {
 				margin-top: 15rem;
 			}
-
 			.column:nth-child(3) {
 				margin-top: 20rem;
 			}
-
 			.column:nth-child(4) {
 				margin-top: 15rem;
 			}
 		}
 	}
 }
-
 
 .icon-animate {
 	position: absolute;
@@ -385,18 +353,88 @@ ul {
 	transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
-@media (min-width: 1440px) {
-  html {
-    font-size: 0.699304vw;
-  }
+#scroller {
+	display: none;
+	width: 5rem;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 100;
+	transform: rotate(-180deg);
+	cursor: pointer;
+}
 
+@media (min-width: 1440px) {
+	html {
+		font-size: 0.699304vw;
+	}
 	.container {
-		width: 110rem;
+		width: 100rem;
+	}
+	.welcome__content {
+		padding-top: 13rem;
+	}
+	.image-container {
+		width: 1440px;
+		height: 1000px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		overflow: hidden;
+	}
+	.sc--scew {
+		position: relative;
+		padding-top: 2.5rem;
+		padding-bottom: 9rem;
+		margin-top: -13rem;
+		width: 100%;
+		z-index: 100;
+	}
+	.container-wrap {
+		width: 100%;
+		max-width: 100rem;
+		position: relative;
+		margin: 0 auto;
+	}
+	.welcome__icon {
+		position: relative;
+		width: 60px;
+		height: 60px;
+		margin: 120px auto 0 !important;
+	}
+	.video__content .row {
+		position: relative;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+	.about__text {
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		font-weight: 100;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding-right: 15px;
+		padding-left: 15px; 
+	}
+
+	.sc__title {
+		margin-bottom: 10rem;
+	}
+
+	.welcome__slogan {
+		font-size: 54px;
+	}
+
+	.welcome__sub-slogan {
+    font-size: 48px;
 	}
 }
 
 @media (max-width: 600px) {
-  html {
-    font-size: 9px;
-  }
+	html {
+		font-size: 9px;
+	}
 }
