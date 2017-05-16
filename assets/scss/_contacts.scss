@@ -1,0 +1,85 @@
+.contacts {
+  background: #141414;
+
+  #header {
+    background: #141414;
+  }
+
+  .sc__title-static {
+    font-size: 6rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+
+  &__top {
+    margin-top: -20rem;
+    padding-top: 40rem;
+  }
+
+  &__link {
+    display: block;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: $color_white;
+    font-weight: 400;
+    transition: all .3s;
+
+    &:hover {
+      color: $secondary_color;
+      // text-decoration: underline;
+    }
+  }
+
+  &__addr {
+    @extend .contacts__link;
+
+    &:hover {
+      color: $color_white;
+    }
+  }
+
+  &__tel {
+    margin-bottom: 2rem;
+    
+    span {
+      display: inline-block;
+      width: 2.6rem;
+    }
+  }
+
+  .back {
+    margin-top: -16rem;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: $color_white;
+      bottom: -1rem;
+      left: 47%;
+      width: 0.2rem;
+      height: 8rem;
+      transform: rotate(25deg);
+    }
+  }
+
+  &__map {
+    height: 150vh;
+    margin-top: -53rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .back {
+      margin-top: -7rem;
+
+      &:after {
+        display: none;
+      }
+    }
+    
+    .contacts__map {
+      margin-top: -40rem;
+    }
+  }
+}

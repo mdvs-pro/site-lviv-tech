@@ -78,7 +78,7 @@
 			this.AnimateSlogan();
 
 			if (window.innerWidth > 767) {
-				this.AnimateIcons();
+				// this.AnimateIcons();
 				this.AnimateTitles();
 			}
 			this.VideoText();

@@ -1,0 +1,47 @@
+<div class="sc contacts__top sc--dark sc--scew">
+  <div class="back"></div>
+  <div class="container">
+    <div class="sc__content">
+      <h1 class="sc__title-static sc__title--l clr-white">Контакти</h1>
+
+      <p class="contacts__p contacts__addr">вул. Стрийська, 48<br>79026, Львів, Україна</p>
+
+      <div class="contacts__tel">
+        <a class="contacts__link" href="tel:+380322121202"><span>t:</span> +38 032 212 12 02</a>
+        <a class="contacts__link" href="tel:+380673412300"><span>m:</span> +38 067 341 23 00</a>
+      </div>
+
+      <div class="contacts__mail">
+        <a class="contacts__link" href="mailto:office@lviv-tech.city">office@lviv-tech.city</a>
+      </div>
+      
+      <a class="contacts__link contacts__site" href="/">www.lviv-tech.city</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="contacts__map" id="map"></div>
+<script>
+  function initMap() {
+    var uluru = {lat: 49.825935, lng: 24.026180};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 9,
+      center: uluru,
+      scrollwheel: false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      draggable: false,
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuYiCFMX7dWPSHMdDNlG4ammRFWk4wRXw&callback=initMap">
+</script>
